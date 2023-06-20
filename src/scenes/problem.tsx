@@ -2,11 +2,19 @@ import {makeScene2D, Txt, Img, Layout, Rect, Icon} from '@motion-canvas/2d';
 import {all, createRef, beginSlide, waitUntil, waitFor, slideTransition, Direction, sequence, createSignal} from '@motion-canvas/core';
 
 import problem_logo from '../../img/problem_white.png';
+import woman from '../../img/woman.png';
+import sad from '../../img/sad.png';
+import blonde from '../../img/woman_blonde.png';
+import nose from '../../img/nose.png';
 
 
 export default makeScene2D(function* (view) {
   const problem = createRef<Txt>();
   const logo = createRef<Img>();
+  const woman_img = createRef<Img>();
+  const sad_img = createRef<Img>();
+  const nose_img = createRef<Img>();
+  const blonde_img = createRef<Img>();
 
   const titleBox = createRef<Rect>();
   const bodyBox = createRef<Rect>();
@@ -47,10 +55,7 @@ export default makeScene2D(function* (view) {
           <Img
             ref={logo}
             src={problem_logo}
-            // width={150}
-            // height={160}
             size={260}
-            // paddingBottom={-500}
             opacity={1}
           />
           <Rect width={10} />
@@ -67,7 +72,41 @@ export default makeScene2D(function* (view) {
           ref={bodyBox}
           height={0}
         />
+
       </Layout>
+      <Img
+        ref={woman_img}
+        src={woman}
+        size={600}
+        opacity={0}
+        x={500}
+        y={50}
+      >
+      <Img
+        ref={nose_img}
+        src={nose}
+        size={130}
+        opacity={0}
+        x={0}
+        y={-40}
+      />
+      <Img
+        ref={blonde_img}
+        src={blonde}
+        size={600}
+        opacity={0}
+        x={0}
+      />
+      <Img
+        ref={sad_img}
+        src={sad}
+        size={70}
+        y={20}
+        rotation={0}
+        opacity={0}
+        x={0}
+      />
+      </Img>
     </>
   );
 
@@ -82,4 +121,8 @@ export default makeScene2D(function* (view) {
     bodyBox().height(910, 1),
   )
   yield* beginSlide('Problem 2');
+  yield* all(
+    woman_img().opacity(1, 1),
+  )
+
 });
