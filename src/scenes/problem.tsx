@@ -1,6 +1,5 @@
 import {makeScene2D, Txt, Img, Layout, Rect, Line} from '@motion-canvas/2d';
 import {all, createRef, beginSlide, slideTransition, Direction, sequence, createSignal} from '@motion-canvas/core';
-import {Origin} from '@motion-canvas/core/lib/types';
 
 import problem_logo from '../../img/problem_white.png';
 
@@ -553,11 +552,14 @@ export default makeScene2D(function* (view) {
   )
   yield* beginSlide('Sequential editing');
   yield* all(
+    woman_img().opacity(0,0),
+    leftLayout().opacity(0,0),
     goodCmp().position.x(-1900, 1),
     sequential().position.x(0, 1)
   )
   yield* beginSlide('Sequential lines');
   yield* sequence(0.3,
+    goodCmp().opacity(0,0),
     sequential_text().opacity(1, 1),
     s_org_smile().opacity(1, 1),
     smile_img().opacity(1, 1),
