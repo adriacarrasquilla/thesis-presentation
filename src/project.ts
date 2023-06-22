@@ -14,6 +14,7 @@ import contents4 from './scenes/contents4?scene';
 import exp1 from './scenes/exp1?scene';
 import exp2 from './scenes/exp2?scene';
 import exp3 from './scenes/exp3?scene';
+import exp4 from './scenes/exp4?scene';
 import tests from './scenes/tests?scene';
 
 import './global.css'
@@ -34,5 +35,6 @@ export default makeProject({
     exp1,
     exp2,
     exp3,
+    exp4,
   ],
 });
