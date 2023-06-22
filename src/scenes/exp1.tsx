@@ -81,7 +81,7 @@ export default makeScene2D(function* (view) {
           <Rect ref={leftRect} fill={blue.concat("44")} width={1760} height={800} 
             layout direction={"column"} alignItems={"center"}
             justifyContent={"center"} gap={30} smoothCorners={true}
-            radius={20} opacity={1}
+            radius={20} opacity={0}
           >
 
             <BlueTxt ref={quantRect}>
@@ -126,6 +126,7 @@ export default makeScene2D(function* (view) {
     logo().size(76, 1),
     bodyBox().height(910, 1),
   )
+  yield* leftRect().opacity(1,1);
 
   yield* beginSlide('dataset');
 

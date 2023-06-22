@@ -2,8 +2,7 @@ import {makeScene2D, Txt, Img, Layout, Rect, Latex} from '@motion-canvas/2d';
 import {all, createRef, beginSlide, slideTransition, Direction, sequence, createSignal, range, makeRef, loop, chain, ThreadGenerator, Center} from '@motion-canvas/core';
 
 import logoImg from '../../img/experiments_white.png';
-import overallImg from '../../img/overall_change_ratio.png';
-import apImg from '../../img/ap.png';
+import expImg from '../../img/fixed_n.png';
 
 
 export default makeScene2D(function* (view) {
@@ -25,8 +24,9 @@ export default makeScene2D(function* (view) {
   const blue = "#277DA1";
             
   const leftLayout = createRef<Layout>();
-  const rightLayout = createRef<Layout>();
-  const overallRef = createRef<Img>();
+  const floatingLayout = createRef<Layout>();
+  const imgRef = createRef<Img>();
+  const floatingLayout2 = createRef<Layout>();
 
   view.add(
     <>
@@ -84,41 +84,69 @@ export default makeScene2D(function* (view) {
             justifyContent={"center"}
             opacity={0}
           >
-            <Img ref={overallRef} src={overallImg} width={1000}/>
-          </Layout>
-          <Layout
-            ref={rightLayout}
-            alignItems={"center"}
-            justifyContent={"center"}
-            width={0}
-            opacity={0}
-            direction={'column'}
-            gap={50}
-          >
-            <Txt text="Experiment: Change Ratio over different attribute
-              coefficient scaling/intensity factors"
-              {...textStyle}
-              fontSize={40} fontWeight={400} textAlign={'center'}/>
-            <Txt text="Using 1k images from FFHQ, transforming in 
-              each one of them n different random attributes"
-              {...textStyle}
-              fontSize={40} fontWeight={400} textAlign={'center'}/>
-            <Txt text="We achieve close but slightly worse results.
-              5-10% behind on CR in similar scaling factors"
-              {...textStyle}
-              fontSize={40} fontWeight={800} textAlign={'center'}/>
+            <Txt text="CR vs AP and IP over fixed n attributes" {... textStyle} fontSize={40}/>
+            <Img ref={imgRef} src={expImg} width={1400} opacity={1}/>
           </Layout>
       </Rect>
+    </Layout>
+    <Rect
+      ref={floatingLayout}
+      alignItems={"center"}
+      justifyContent={"center"}
+      width={900}
+      height={200}
+      opacity={1}
+      direction={'column'}
+      fill={blue}
+      gap={50}
+      layout
+      y={805}
+      x={481}
+    >
+      <Txt text="Evolution of CR compared to AP and IP
+    over different fixed n attributes and same 
+    scaling factors"
+        {...textStyle} fill={"#FFFFFF"}
+        fontSize={40} fontWeight={800} textAlign={'left'}/>
+    </Rect>
+    <Layout
+      ref={floatingLayout2}
+      alignItems={"start"}
+      justifyContent={"center"}
+      width={900}
+      height={200}
+      opacity={0}
+      direction={'column'}
+      gap={50}
+      layout
+      y={80}
+      x={-370}
+    >
+      <Txt text="When transforming less simultaneous attributes,
+          CR results are very close"
+        {...textStyle}
+        fontSize={60} fontWeight={800} textAlign={'left'}/>
+      <Txt text="We achieve better results at identity preservation,
+          even for larger values of n"
+        {...textStyle}
+        fontSize={60} fontWeight={800} textAlign={'left'}/>
+      <Txt text="The baseline performs better at attribute preservation"
+        {...textStyle}
+        fontSize={60} fontWeight={800} textAlign={'left'}/>
     </Layout>
   </>
 );
 
   yield* slideTransition(Direction.Bottom);
   yield* leftLayout().opacity(1, 1);
-  yield* all(
-    rightLayout().width(900, 1),
-    overallRef().width(800, 1)
+  yield* floatingLayout().position.y(405, 1);
+  yield* beginSlide('Explain2');
+  yield* floatingLayout().position.y(805, 1);
+  yield* beginSlide('Explain3');
+  
+  yield* sequence(0.5,
+    leftLayout().opacity(0.2, 1),
+    floatingLayout2().opacity(1,1)
   )
-  yield* rightLayout().opacity(1, 1);
-  yield* beginSlide('CR');
+  yield* beginSlide('End');
 });
