@@ -7,6 +7,8 @@ import contents2 from './scenes/contents2?scene';
 import goals from './scenes/goals?scene';
 import contents3 from './scenes/contents3?scene';
 import proposal1 from './scenes/proposal1?scene';
+import proposal2 from './scenes/proposal2?scene';
+import proposal3 from './scenes/proposal3?scene';
 import tests from './scenes/tests?scene';
 
 import './global.css'
@@ -20,5 +22,7 @@ export default makeProject({
     goals,
     contents3,
     proposal1,
+    proposal2,
+    proposal3,
   ],
 });

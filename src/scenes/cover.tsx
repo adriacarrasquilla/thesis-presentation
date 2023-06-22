@@ -81,6 +81,7 @@ export default makeScene2D(function* (view) {
     </>
   );
 
+  yield* beginSlide('Cover 1')
   yield* all(
     title().position.y(-150, 1),
     author().position.y(-10, 1.3),
