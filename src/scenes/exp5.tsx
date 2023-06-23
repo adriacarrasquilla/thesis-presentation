@@ -2,7 +2,7 @@ import {makeScene2D, Txt, Img, Layout, Rect} from '@motion-canvas/2d';
 import {createRef, beginSlide, slideTransition, Direction, sequence} from '@motion-canvas/core';
 
 import logoImg from '../../img/experiments_white.png';
-import expImg from '../../img/fixed_n.png';
+import expImg from '../../img/performance.png';
 
 
 export default makeScene2D(function* (view) {
@@ -58,7 +58,7 @@ export default makeScene2D(function* (view) {
           <Rect width={10} />
           <Txt
             ref={titleText}
-            text={"Quantitative Evaluation"}
+            text={"Performance Evaluation"}
             {...textStyle}
             fill={"#ffffff"}
             fontSize={80}
@@ -79,13 +79,13 @@ export default makeScene2D(function* (view) {
             ref={leftLayout}
             layout
             direction={'column'}
-            gap={20}
+            gap={50}
             alignItems={"center"}
             justifyContent={"center"}
             opacity={0}
           >
-            <Txt text="CR vs AP and IP over fixed n attributes" {... textStyle} fontSize={40}/>
-            <Img ref={imgRef} src={expImg} width={1400} opacity={1}/>
+            <Txt text="Different performance metrics" {... textStyle} fontSize={50}/>
+            <Img ref={imgRef} src={expImg} width={1600} opacity={1}/>
           </Layout>
       </Rect>
     </Layout>
@@ -93,7 +93,7 @@ export default makeScene2D(function* (view) {
       ref={floatingLayout}
       alignItems={"center"}
       justifyContent={"center"}
-      width={900}
+      width={1050}
       height={200}
       opacity={1}
       direction={'column'}
@@ -101,11 +101,11 @@ export default makeScene2D(function* (view) {
       gap={50}
       layout
       y={805}
-      x={481}
+      x={405}
     >
-      <Txt text="Evolution of CR compared to AP and IP
-    over different fixed n attributes and same 
-    scaling factors"
+      <Txt text="Trained models to learn n attributes and 
+                 compared the training speed, memory usage and 
+                 disk space usage by both approaches"
         {...textStyle} fill={"#FFFFFF"}
         fontSize={40} fontWeight={800} textAlign={'left'}/>
     </Rect>
@@ -122,17 +122,16 @@ export default makeScene2D(function* (view) {
       y={80}
       x={-370}
     >
-      <Txt text="When transforming less simultaneous attributes,
-          CR results are very close"
+      <Txt text="Our approach gets 8 times faster"
         {...textStyle}
         fontSize={60} fontWeight={800} textAlign={'left'}/>
-      <Txt text="We achieve better results at identity preservation,
-          even for larger values of n"
+      <Txt text="We need 2.5 times more GPU memory during training.
+          Our increases linearly while theirs stays constant"
         {...textStyle}
-        fontSize={60} fontWeight={800} textAlign={'left'}/>
-      <Txt text="The baseline performs better at attribute preservation"
+        fontSize={60} fontWeight={400} textAlign={'left'}/>
+      <Txt text="Disk size evolution is the same, with a difference gap of 50MB"
         {...textStyle}
-        fontSize={60} fontWeight={800} textAlign={'left'}/>
+        fontSize={60} fontWeight={400} textAlign={'left'}/>
     </Layout>
   </>
 );
