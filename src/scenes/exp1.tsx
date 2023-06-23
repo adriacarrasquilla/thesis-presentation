@@ -65,6 +65,7 @@ export default makeScene2D(function* (view) {
             text={"EXPERIMENTS"}
             {...textStyle}
             fill={"#ffffff"}
+            fontSize={200}
             paddingTop={20}
           />
         </Rect>

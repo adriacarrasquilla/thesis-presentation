@@ -18,6 +18,10 @@ import exp4 from './scenes/exp4?scene';
 import exp5 from './scenes/exp5?scene';
 import exp6 from './scenes/exp6?scene';
 import exp7 from './scenes/exp7?scene';
+import contents5 from './scenes/contents5?scene';
+import conclusion from './scenes/conclusion?scene';
+import demo from './scenes/demo?scene';
+import end from './scenes/cover_last?scene';
 // import tests from './scenes/tests?scene';
 
 import './global.css'
@@ -42,5 +46,9 @@ export default makeProject({
     exp5,
     exp6,
     exp7,
+    contents5,
+    conclusion,
+    demo,
+    end,
   ],
 });
