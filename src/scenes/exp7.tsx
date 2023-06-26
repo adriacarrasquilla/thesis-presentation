@@ -179,20 +179,48 @@ export default makeScene2D(function* (view) {
             ref={realismLayout}
             layout
             direction={'column'}
-            gap={40}
+            gap={30}
             alignItems={"center"}
             justifyContent={"center"}
             opacity={0}
             height={0}
+            paddingTop={70}
           >
-            <Txt text="We compute objective metrics to assess
-              and compare the quality of the decoded images."
+            <Txt text="(Bigger is 
+              better)"
               {...textStyle}
               textAlign={"center"}
-              fontWeight={400}
-              paddingTop={40}
+              fontWeight={300}
+              layout={false}
+              fontSize={30}
+              y={-360}
+              x={295}
+            />
+            <Txt text="(Smaller is 
+              better)"
+              {...textStyle}
+              textAlign={"center"}
+              fontWeight={300}
+              layout={false}
+              fontSize={30}
+              y={-360}
+              x={585}
             />
             <Img ref={realismRef} src={realism} width={1400}
+            />
+            <Txt text="We compute objective metrics to assess and compare
+              the quality of the decoded images"
+              {...textStyle}
+              fontSize={50}
+              textAlign={"center"}
+              fontWeight={400}
+            />
+            <Txt text="These metrics consider factors such as structural similarity,
+              perceptual quality, and human perception"
+              {...textStyle}
+              fontSize={50}
+              textAlign={"center"}
+              fontWeight={400}
             />
         </Layout>
         <Txt text="In general terms, our model achieves more

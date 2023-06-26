@@ -53,5 +53,4 @@ export default makeScene2D(function* (view) {
 
   yield* slideTransition(Direction.Right);
   yield* beginSlide('Demo');
-  yield* beginSlide('end');
 });

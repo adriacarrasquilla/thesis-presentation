@@ -20,6 +20,7 @@ import exp6 from './scenes/exp6?scene';
 import exp7 from './scenes/exp7?scene';
 import contents5 from './scenes/contents5?scene';
 import conclusion from './scenes/conclusion?scene';
+import future from './scenes/future?scene';
 import demo from './scenes/demo?scene';
 import end from './scenes/cover_last?scene';
 // import tests from './scenes/tests?scene';
@@ -48,6 +49,7 @@ export default makeProject({
     exp7,
     contents5,
     conclusion,
+    future,
     demo,
     end,
   ],

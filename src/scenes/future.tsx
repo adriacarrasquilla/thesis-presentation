@@ -2,12 +2,13 @@ import {makeScene2D, Txt, Img, Layout, Rect, Latex} from '@motion-canvas/2d';
 import {all, createRef, beginSlide, slideTransition, Direction, sequence, createSignal, range, makeRef, loop, chain, ThreadGenerator} from '@motion-canvas/core';
 
 import logoImg from '../../img/conclusions_white.png';
+import ffhqImg from '../../img/ffhq.png';
 
 
 export default makeScene2D(function* (view) {
   const titleBox = createRef<Rect>();
   const bodyBox = createRef<Rect>();
-  const proposalText = createRef<Txt>();
+  const titleText = createRef<Txt>();
   const logo = createRef<Img>();
 
   const leftRect = createRef<Rect>();
@@ -19,10 +20,6 @@ export default makeScene2D(function* (view) {
   const c3Text = createRef<Txt>();
   const c4Rect = createRef<Rect>();
   const c4Text = createRef<Txt>();
-  const c5Rect = createRef<Rect>();
-  const c5Text = createRef<Txt>();
-  const finalText = createRef<Txt>();
-  const finalText2 = createRef<Txt>();
 
   const textStyle = {
     fontWeight: 600,
@@ -72,7 +69,7 @@ export default makeScene2D(function* (view) {
           />
           <Rect width={10} />
           <Txt
-            ref={proposalText}
+            ref={titleText}
             text={"CONCLUSIONS"}
             {...textStyle}
             fontSize={200}
@@ -90,7 +87,7 @@ export default makeScene2D(function* (view) {
         direction={'row'}
         gap={0}
       >
-          <Rect ref={leftRect} fill={purple.concat("44")} width={1820} height={830} 
+          <Rect ref={leftRect} fill={purple.concat("44")} width={1720} height={830} 
             layout direction={"column"} alignItems={"center"}
             justifyContent={"center"} gap={30} smoothCorners={true}
             radius={20} opacity={0}
@@ -98,18 +95,18 @@ export default makeScene2D(function* (view) {
 
             <Rect {...purpleStyle} ref={c1Rect}>
               <Txt ref={c1Text}
-                text="We successfully proposed and implemented an architecture capable of learning and 
-                transforming simultaneously 20 different attributes"
-                {... textStyle} fontSize={35} textAlign={"center"}
+                text="Optimize GPU memory usage. Improvements in the
+                multiplication Block"
+                {... textStyle} fontSize={45} textAlign={"center"}
               />
     
             </Rect>
 
             <Rect {...purpleStyle} ref={c2Rect}>
               <Txt ref={c2Text}
-                text="We proposed three different types of evaluation: quantitative, 
-                performance and subjective"
-                {... textStyle} fontSize={35} textAlign={"center"}
+                text="Explore or improve encoding/decoding mechanisms
+                to overcome facial pose issues"
+                {... textStyle} fontSize={45} textAlign={"center"}
               />
     
             </Rect>
@@ -117,88 +114,53 @@ export default makeScene2D(function* (view) {
             <Rect {...purpleStyle} ref={c3Rect}>
               <Txt 
                 ref={c3Text}
-                text="Our solution can be trained 8 times faster at the cost of requiring more GPU memory 
-                when learning more attributes"
-                {... textStyle} fontSize={35} textAlign={"center"}
+                text="Focus on acquiring datasets with better and more 
+                diverse representations and promote inclusivity"
+                {... textStyle} fontSize={45} textAlign={"center"}
               />
             </Rect>
 
             <Rect {...purpleStyle} ref={c4Rect}>
               <Txt 
                 ref={c4Text}
-                text="Our transformations preserve better the subject identity but slightly worse at
-                Target Change Ratio and Attribute Preservation, specially when manipulating
-                more simultaneous attributes
+                text="Combine our findings with other state of the art for 
+                performing attribute manipulation in videos
                 "
-                {... textStyle} fontSize={35} textAlign={"center"}
-              />
-            </Rect>
-            <Rect {...purpleStyle} ref={c5Rect}>
-              <Txt 
-                ref={c5Text}
-                text="The subjective study proved how our results were more appealing and realistic.
-                We achieved more votes than the baseline"
-                {... textStyle} fontSize={35} textAlign={"center"}
+                {... textStyle} fontSize={45} textAlign={"center"}
               />
             </Rect>
           </Rect>
-        <Txt
-            ref={finalText}
-            text="We present a more efficient and elegant
-            solution that produces more appealing and 
-            realistic results, preserves better the identity
-            and is 8 times faster than the baseline"
-
-            {... textStyle}
-            layout={false}
-            textAlign={'center'}
-            fontSize={70}
-            opacity={0}
-            y={-80}
-        />
       </Rect>
     </Layout>
-    <Txt
-        ref={finalText2}
-        text="We are also currently working towards publication
-        of our work"
-        y={300}
-        {... textStyle}
-        layout={false}
-        textAlign={'center'}
-        fontSize={55}
-        opacity={0}
-        fontWeight={400}
-    />
   </>
 );
 
-  yield* slideTransition(Direction.Right);
-  yield* beginSlide('Conclus Init');
   yield* all(
-    titleBox().height(150, 1),
-    proposalText().fontSize(80, 1),
-    logo().size(76, 1),
-    bodyBox().height(910, 1),
+    titleBox().height(150, 0),
+    titleText().fontSize(80, 0),
+    logo().size(76, 0),
+    bodyBox().height(910, 0),
   )
-  yield* leftRect().opacity(1,1);
+  yield* slideTransition(Direction.Right);
+  yield* all(
+    leftRect().opacity(1,1),
+    titleText().text("Future Work", 1)
+  )
 
   yield* beginSlide('c1');
   yield* all(
-    c1Text().fontSize(41, 1),
+    c1Text().fontSize(60, 1),
     c2Rect().opacity(0.1, 1),
     c3Rect().opacity(0.1, 1),
     c4Rect().opacity(0.1, 1),
-    c5Rect().opacity(0.1, 1),
     c2Text().fontSize(30, 1),
     c3Text().fontSize(30, 1),
     c4Text().fontSize(30, 1),
-    c5Text().fontSize(30, 1),
   )
 
   yield* beginSlide('c2');
   yield* all(
-    c2Text().fontSize(41, 1),
+    c2Text().fontSize(60, 1),
     c2Rect().opacity(1, 1),
     c1Rect().opacity(0.1, 1),
     c1Text().fontSize(30, 1),
@@ -206,7 +168,7 @@ export default makeScene2D(function* (view) {
 
   yield* beginSlide('c3');
   yield* all(
-    c3Text().fontSize(40, 1),
+    c3Text().fontSize(60, 1),
     c3Rect().opacity(1, 1),
     c2Rect().opacity(0.1, 1),
     c2Text().fontSize(30, 1),
@@ -214,25 +176,10 @@ export default makeScene2D(function* (view) {
 
   yield* beginSlide('c4');
   yield* all(
-    c4Text().fontSize(41, 1),
+    c4Text().fontSize(60, 1),
     c4Rect().opacity(1, 1),
     c3Rect().opacity(0.1, 1),
     c3Text().fontSize(30, 1),
   )
-  yield* beginSlide('c5');
-  yield* all(
-    c5Text().fontSize(41, 1),
-    c5Rect().opacity(1, 1),
-    c4Rect().opacity(0.1, 1),
-    c4Text().fontSize(30, 1),
-  )
-  yield* beginSlide('final');
-  yield* all(
-    c5Rect().opacity(0.1, 1),
-    c5Text().fontSize(30, 1),
-    finalText().opacity(1, 1),
-    finalText2().opacity(1, 1)
-  )
-
   yield* beginSlide('end');
 });
