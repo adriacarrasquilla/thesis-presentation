@@ -126,7 +126,7 @@ export default makeScene2D(function* (view) {
             <Rect {...purpleStyle} ref={c4Rect}>
               <Txt 
                 ref={c4Text}
-                text="Our transformations preserve better the subject identity but slightly worse at
+                text="Our transformations are better at the identity preservation but slightly worse at
                 Target Change Ratio and Attribute Preservation, specially when manipulating
                 more simultaneous attributes
                 "
@@ -160,8 +160,7 @@ export default makeScene2D(function* (view) {
     </Layout>
     <Txt
         ref={finalText2}
-        text="We are also currently working towards publication
-        of our work"
+        text="We are also currently working towards publication of our work"
         y={300}
         {... textStyle}
         layout={false}

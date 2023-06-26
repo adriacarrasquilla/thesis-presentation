@@ -144,6 +144,5 @@ export default makeScene2D(function* (view) {
   )
   yield* slideTransition(Direction.Right);
   yield* proposalText().text("Training Details", 1)
-  yield* beginSlide('Our Arch Init');
   yield* beginSlide('End');
 });

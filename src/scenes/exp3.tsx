@@ -103,8 +103,9 @@ export default makeScene2D(function* (view) {
               each one of them n different random attributes"
               {...textStyle}
               fontSize={40} fontWeight={400} textAlign={'center'}/>
-            <Txt text="We achieve close but slightly worse results.
-              5-10% behind on CR in similar scaling factors"
+            <Txt text="We achieve better results for lower scaling
+              factors, but worse results on bigger factors
+              (up to 5-10% behind the baseline)"
               {...textStyle}
               fontSize={40} fontWeight={800} textAlign={'center'}/>
           </Layout>

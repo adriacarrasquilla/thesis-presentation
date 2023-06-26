@@ -23,7 +23,6 @@ import conclusion from './scenes/conclusion?scene';
 import future from './scenes/future?scene';
 import demo from './scenes/demo?scene';
 import end from './scenes/cover_last?scene';
-// import tests from './scenes/tests?scene';
 
 import './global.css'
 

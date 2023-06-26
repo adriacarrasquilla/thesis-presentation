@@ -256,7 +256,7 @@ export default makeScene2D(function* (view) {
     multiRef().size(200, 1),
     optA().text("Option A", 1),
   )
-  yield* waitFor(1);
+  yield* waitFor(0.5);
   yield* all(
     optA().text("", 1),
     optB().text("Option B", 1),
@@ -265,7 +265,7 @@ export default makeScene2D(function* (view) {
     singleRef().opacity(0.3, 1),
     singleRef().size(200, 1),
   )
-  yield* waitFor(1);
+  yield* waitFor(0.5);
   yield* all(
     optA().text("", 1),
     optB().text("", 1),

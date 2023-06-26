@@ -281,7 +281,6 @@ export default makeScene2D(function* (view) {
   )
   yield* slideTransition(Direction.Right);
   yield* proposalText().text("Proposed Architecture", 1)
-  yield* beginSlide('Our Arch Init');
   yield* archLayout().opacity(1,1);
   yield* beginSlide('Latent Transformer');
   yield* all(
