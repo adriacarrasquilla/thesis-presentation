@@ -31,6 +31,7 @@ export default makeScene2D(function* (view) {
         fill={'#242424'}
         y={800}
         {...textStyle}
+        textAlign={'center'}
       />
       <Txt
         ref={author}
@@ -40,6 +41,7 @@ export default makeScene2D(function* (view) {
         {...textStyle}
         fontWeight={400}
         fontSize={50}
+        textAlign={'center'}
       />
       <Txt
         ref={directors}
@@ -49,6 +51,7 @@ export default makeScene2D(function* (view) {
         {...textStyle}
         fontWeight={300}
         fontSize={40}
+        textAlign={'center'}
       />
       <Txt
         ref={master}
@@ -58,6 +61,7 @@ export default makeScene2D(function* (view) {
         {...textStyle}
         fontWeight={700}
         fontSize={30}
+        textAlign={'center'}
       />
       <Layout 
         ref={logos} 

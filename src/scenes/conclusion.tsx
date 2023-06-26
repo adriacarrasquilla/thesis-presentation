@@ -34,7 +34,12 @@ export default makeScene2D(function* (view) {
 
   const purple = "#8e7dbe"
             
-  const PurpleTxt = props => <Rect fill={purple.concat("88")} padding={20} smoothCorners={true} radius={20} {...props}/>;
+  const purpleStyle ={
+    fill:purple.concat("88"),
+    padding:20,
+    smoothCorners:true,
+    radius:20
+  }
 
   view.add(
     <>
@@ -89,25 +94,25 @@ export default makeScene2D(function* (view) {
             radius={20} opacity={0}
           >
 
-            <PurpleTxt ref={c1Rect}>
+            <Rect {...purpleStyle} ref={c1Rect}>
               <Txt ref={c1Text}
                 text="We successfully proposed and implemented an architecture capable
                 of learning and transforming simultaneously 20 different attributes"
                 {... textStyle} fontSize={40} textAlign={"center"}
               />
     
-            </PurpleTxt>
+            </Rect>
 
-            <PurpleTxt ref={c2Rect}>
+            <Rect {...purpleStyle} ref={c2Rect}>
               <Txt 
                 ref={c2Text}
                 text="Our solution can be trained 8 times faster at the cost of
                 requiring more GPU memory when learning more attributes"
                 {... textStyle} fontSize={40} textAlign={"center"}
               />
-            </PurpleTxt>
+            </Rect>
 
-            <PurpleTxt ref={c3Rect}>
+            <Rect {...purpleStyle} ref={c3Rect}>
               <Txt 
                 ref={c3Text}
                 text="Our transformations preserve better the subject
@@ -117,15 +122,15 @@ export default makeScene2D(function* (view) {
                 "
                 {... textStyle} fontSize={40} textAlign={"center"}
               />
-            </PurpleTxt>
-            <PurpleTxt ref={c4Rect}>
+            </Rect>
+            <Rect {...purpleStyle} ref={c4Rect}>
               <Txt 
                 ref={c4Text}
                 text="The subjective study proved how our results were more appealing
                 and realistic. We achieved more votes than the baseline"
                 {... textStyle} fontSize={40} textAlign={"center"}
               />
-            </PurpleTxt>
+            </Rect>
           </Rect>
         <Txt
             ref={finalText}

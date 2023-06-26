@@ -115,6 +115,9 @@ export default makeScene2D(function* (view) {
               ref={clsRect}
               layout
               {...lossStyle}
+              justifyContent={"center"}
+              alignItems={"center"}
+              direction={"column"}
             >
               <Txt
                 ref={clsTxt}
@@ -159,6 +162,9 @@ export default makeScene2D(function* (view) {
               ref={attrRect}
               layout
               {...lossStyle}
+              justifyContent={"center"}
+              alignItems={"center"}
+              direction={"column"}
             >
               <Txt
                 ref={attrTxt}
@@ -203,6 +209,9 @@ export default makeScene2D(function* (view) {
               ref={recRect}
               layout
               {...lossStyle}
+              justifyContent={"center"}
+              alignItems={"center"}
+              direction={"column"}
             >
               <Txt
                 ref={recTxt}

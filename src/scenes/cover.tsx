@@ -20,7 +20,6 @@ export default makeScene2D(function* (view) {
     padding: 20,
     cache: true,
     fontFamily: 'Open Sans',
-    textAlign: 'center'
   };
 
   view.add(
@@ -31,6 +30,7 @@ export default makeScene2D(function* (view) {
         fill={'#242424'}
         y={800}
         {...textStyle}
+        textAlign={'center'}
       />
       <Txt
         ref={author}
@@ -40,6 +40,7 @@ export default makeScene2D(function* (view) {
         {...textStyle}
         fontWeight={400}
         fontSize={50}
+        textAlign={'center'}
       />
       <Txt
         ref={directors}
@@ -49,15 +50,17 @@ export default makeScene2D(function* (view) {
         {...textStyle}
         fontWeight={300}
         fontSize={40}
+        textAlign={'center'}
       />
       <Txt
         ref={master}
-        text={"MAI Master Thesis"}
+        text={"MAI Master Thesis - 27/06/2023"}
         fill={'#242424'}
         y={800}
         {...textStyle}
         fontWeight={700}
         fontSize={30}
+        textAlign={'center'}
       />
       <Layout 
         ref={logos} 
@@ -81,16 +84,16 @@ export default makeScene2D(function* (view) {
     </>
   );
 
-  yield* beginSlide('Cover 1')
+  yield* beginSlide('Start')
   yield* all(
     title().position.y(-150, 1),
     author().position.y(-10, 1.3),
   );
-  yield* beginSlide('Cover 1')
+  yield* beginSlide('Codirectors')
   yield* all(
     directors().position.y(150, 1.3),
     master().position.y(200, 1.6),
     logos().position.y(350, 1.8)
   )
-  yield* beginSlide('Cover 2')
+  yield* beginSlide('EndCover')
 });

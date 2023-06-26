@@ -1,5 +1,5 @@
-import {makeScene2D, Txt, Img, Layout, Rect, Latex} from '@motion-canvas/2d';
-import {all, createRef, beginSlide, slideTransition, Direction, sequence, createSignal, range, makeRef, loop, chain, ThreadGenerator} from '@motion-canvas/core';
+import {makeScene2D, Txt, Img, Layout, Rect} from '@motion-canvas/2d';
+import {all, createRef, beginSlide, slideTransition, Direction} from '@motion-canvas/core';
 
 import logoImg from '../../img/experiments_white.png';
 import ffhqImg from '../../img/ffhq.png';
@@ -30,7 +30,12 @@ export default makeScene2D(function* (view) {
 
   const blue = "#277DA1";
             
-  const BlueTxt = props => <Rect fill={blue.concat("88")} padding={20} smoothCorners={true} radius={20} {...props}/>;
+  const blueStyle ={
+    fill:blue.concat("88"),
+    padding:20,
+    smoothCorners:true,
+    radius:20
+  }
 
   view.add(
     <>
@@ -85,17 +90,17 @@ export default makeScene2D(function* (view) {
             radius={20} opacity={0}
           >
 
-            <BlueTxt ref={quantRect}>
+            <Rect {...blueStyle} ref={quantRect}>
               <Txt ref={quantText} text="Quantitative evaluation" {... textStyle} fontSize={60}/>
-            </BlueTxt>
+            </Rect>
 
-            <BlueTxt>
+            <Rect {... blueStyle}>
               <Txt text="Ablation study" {... textStyle}/>
-            </BlueTxt>
+            </Rect>
 
-            <BlueTxt>
+            <Rect {... blueStyle}>
             <Txt text="Subjective study" {... textStyle}/>
-            </BlueTxt>
+            </Rect>
           </Rect>
 
           <Rect ref={rightRect} fill={blue.concat("44")} width={0} height={800} 
