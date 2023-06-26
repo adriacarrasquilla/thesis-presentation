@@ -109,14 +109,17 @@ export default makeScene2D(function* (view) {
             />
             <Txt
               ref={cmpDescText}
-              text="Trained different models to learn 3 attributes
-              using different compression rates. The resulting
-              compressed vectors are of sizes 512, 1536, 3072.
-              Quality is assessed using the overall change ratio.
+              text="- Trained different models to learn 3 attributes
+              using different compression rates.
+
+              - The resulting compressed vectors are of
+              sizes 512, 1536, 3072.
+
+              - Quality is assessed using the overall change ratio.
               "
               {...textStyle}
-              textAlign={"center"}
-              fontSize={60}
+              textAlign={"left"}
+              fontSize={50}
               fontWeight={400}
               layout={false}
               opacity={0}
@@ -197,7 +200,7 @@ export default makeScene2D(function* (view) {
     cmpTitle().width(1500, 1),
     cmpTitle().fontSize(60, 1),
     cmpTitle().fill("#282828", 1),
-    cmpTitle().y(-200, 1),
+    cmpTitle().y(-250, 1),
     cmpBlock().width(1500, 1),
     cmpBlock().fill(blue.concat("88"), 1),
   )
@@ -210,13 +213,14 @@ export default makeScene2D(function* (view) {
   );
   yield* all(
     cmpDescText().text("Compressing the transformed vector into\n 512 elements is the optimal rate.\n\n We cannot see a negative impact and using lower\n compression rates achieves slightly worse results.",1),
+    cmpDescText().textAlign("center", 1)
   )
   yield* beginSlide('Cmp conclusion');
   yield* all(
     cmpImgRef().opacity(0,1),
     cmpImgRef().width(0,1),
     cmpDescText().opacity(1,1),
-    cmpTitle().y(-250, 1),
+    cmpTitle().y(-200, 1),
   );
   yield* beginSlide('mul block');
   yield* all(
@@ -246,7 +250,10 @@ export default makeScene2D(function* (view) {
   yield* mulDescText().opacity(0,0.5);
   yield* all(
     mulImgRef().opacity(1,1),
-    mulImgRef().width(1400,1),
+    // mulImgRef().width(1400,1),
+    bodyBox().gap(0,1),
+    mulImgRef().width(1750,1),
+    mulBlock().width(1800, 1),
   );
   yield* all(
     mulDescText().text("It is not possible to control the intensity\n and direction of the transformation without\n a multiplication operation",1),
@@ -257,10 +264,12 @@ export default makeScene2D(function* (view) {
     mulImgRef().width(0,1),
     mulDescText().opacity(1,1),
     mulTitle().y(-150, 1),
+    mulBlock().width(1500, 1),
   );
   
   yield* beginSlide('b4 end');
   yield* all(
+    bodyBox().gap(50,1),
     mulDescText().opacity(0,0.5),
     mulTitle().y(0, 1),
     mulTitle().fill("#ffffff", 1),

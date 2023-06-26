@@ -1,8 +1,9 @@
 import {makeScene2D, Txt, Img, Layout, Rect} from '@motion-canvas/2d';
-import {createRef, beginSlide, slideTransition, Direction, sequence} from '@motion-canvas/core';
+import {createRef, beginSlide, slideTransition, Direction, sequence, all} from '@motion-canvas/core';
 
 import logoImg from '../../img/experiments_white.png';
-import expImg from '../../img/fixed_n.png';
+import expImg1 from '../../img/fixed_n1.png';
+import expImg2 from '../../img/fixed_n2.png';
 
 
 export default makeScene2D(function* (view) {
@@ -25,7 +26,8 @@ export default makeScene2D(function* (view) {
             
   const leftLayout = createRef<Layout>();
   const floatingLayout = createRef<Layout>();
-  const imgRef = createRef<Img>();
+  const imgRef1 = createRef<Img>();
+  const imgRef2 = createRef<Img>();
   const floatingLayout2 = createRef<Layout>();
 
   view.add(
@@ -85,7 +87,8 @@ export default makeScene2D(function* (view) {
             opacity={0}
           >
             <Txt text="CR vs AP and IP over fixed n attributes" {... textStyle} fontSize={40}/>
-            <Img ref={imgRef} src={expImg} width={1400} opacity={1}/>
+            <Img ref={imgRef1} src={expImg1} width={1400} opacity={1}/>
+            <Img ref={imgRef2} src={expImg2} width={1400} opacity={1}/>
           </Layout>
       </Rect>
     </Layout>
@@ -122,12 +125,12 @@ export default makeScene2D(function* (view) {
       y={80}
       x={-370}
     >
-      <Txt text="When transforming less simultaneous attributes,
-          CR results are very close"
-        {...textStyle}
-        fontSize={60} fontWeight={800} textAlign={'left'}/>
       <Txt text="We achieve better results at identity preservation,
           even for larger values of n"
+        {...textStyle}
+        fontSize={60} fontWeight={800} textAlign={'left'}/>
+      <Txt text="When transforming less simultaneous attributes,
+          CR results are very close"
         {...textStyle}
         fontSize={60} fontWeight={800} textAlign={'left'}/>
       <Txt text="The baseline performs better at attribute preservation"
@@ -140,13 +143,28 @@ export default makeScene2D(function* (view) {
   yield* slideTransition(Direction.Bottom);
   yield* leftLayout().opacity(1, 1);
   yield* floatingLayout().position.y(405, 1);
-  yield* beginSlide('Explain2');
-  yield* floatingLayout().position.y(805, 1);
-  yield* beginSlide('Explain3');
+  yield* beginSlide('Explain IP');
+  yield* all(
+    floatingLayout().position.y(805, 1),
+    imgRef1().width(1700, 1),
+    imgRef2().width(600, 1),
+    imgRef2().opacity(0.2, 1)
+  )
+  yield* beginSlide('Explain AP');
+  yield* all(
+    imgRef2().width(1700, 1),
+    imgRef2().opacity(1, 1),
+    imgRef1().width(600, 1),
+    imgRef1().opacity(0.2, 1)
+  )
   
-  yield* sequence(0.5,
+  yield* beginSlide('Conclus');
+  yield* sequence(0.1,
+    imgRef2().width(1500, 1),
+    imgRef1().width(1500, 1),
+    imgRef1().opacity(1, 1),
     leftLayout().opacity(0.2, 1),
-    floatingLayout2().opacity(1,1)
+    floatingLayout2().opacity(1,1),
   )
   yield* beginSlide('End');
 });

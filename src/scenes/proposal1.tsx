@@ -7,6 +7,7 @@ import classifierImg from '../../img/classifier.png';
 import orgImg from '../../img/clas_ex_org.png';
 import trImg from '../../img/clas_ex_tr.png';
 import singArch from '../../img/single_arch.jpeg';
+import paperImg from '../../img/paper_img.png';
 
 
 export default makeScene2D(function* (view) {
@@ -142,15 +143,23 @@ export default makeScene2D(function* (view) {
         opacity={0}
       >
       <Txt
-        text={"We aim to improve the proposal from the paper"} 
+        text="We build on top of a state-of-the-art solution and propose an
+            alternative to their approach. The paper is titled:" 
         {... textStyle}
-        fontSize={60}
+        fontSize={50}
         fontWeight={400}
       />
       <Txt
         text={"A Latent Transformer for Face Editing in Images and Videos"} 
         {... textStyle}
-        fontSize={60}
+        fontSize={50}
+        fontWeight={300}
+        fontStyle={"italic"}
+      />
+      <Txt
+        text={"(Accepted by ICCV in 2021)"} 
+        {... textStyle}
+        fontSize={30}
         fontWeight={300}
         fontStyle={"italic"}
       />
@@ -161,9 +170,16 @@ export default makeScene2D(function* (view) {
           - Train 40 models sequentially to learn individual attributes
         "
         {... textStyle}
-        fontSize={50}
+        fontSize={45}
         fontWeight={400}
-          paddingTop={50}
+        paddingTop={40}
+        paddingBottom={150}
+      />
+      <Img
+        src={paperImg}
+        layout={false}
+        width={1200}
+        y={300}
       />
     </Layout>
     <Layout

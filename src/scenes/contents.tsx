@@ -56,7 +56,7 @@ export default makeScene2D(function* (view) {
         />
         <Txt
           ref={conclusion}
-          text={"5. Conclusion"}
+          text={"5. Conclusions"}
           fill={'#242424'}
           {...textStyle}
         />
@@ -68,6 +68,24 @@ export default makeScene2D(function* (view) {
         y={-310}
         x={-100}
         opacity={0}
+      />
+      <Txt
+        text="
+        C 
+        O 
+        N 
+        T 
+        E 
+        N 
+        T 
+        S
+        "
+        {...textStyle}
+        fill={'#000000'}
+        opacity={0.2}
+        x={700}
+        y={-50}
+        fontSize={100}
       />
     </>
   );

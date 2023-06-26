@@ -53,7 +53,7 @@ export default makeScene2D(function* (view) {
         />
         <Txt
           ref={conclusion}
-          text={"5. Conclusion"}
+          text={"5. Conclusions"}
           fill={'#242424'}
           {...textStyle}
         />

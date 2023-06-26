@@ -71,7 +71,7 @@ export default makeScene2D(function* (view) {
           <Rect width={10} />
           <Txt
             ref={proposalText}
-            text={"CONCLUSION"}
+            text={"CONCLUSIONS"}
             {...textStyle}
             fontSize={200}
             fill={"#ffffff"}
