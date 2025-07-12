@@ -287,73 +287,73 @@ export default makeScene2D(function* (view) {
   )
   yield* beginSlide('BCE');
   yield* all(
-      lossLayout().gap(0, 1),
+      lossLayout().gap(0, 0.5),
 
-      recRect().width(0, 1),
-      recTxt().width(0, 1),
-      attrRect().width(0, 1),
-      attrTxt().width(0, 1),
+      recRect().width(0, 0.5),
+      recTxt().width(0, 0.5),
+      attrRect().width(0, 0.5),
+      attrTxt().width(0, 0.5),
 
-      clsRect().width(1500, 1),
-      clsRect().height(700, 1),
-      clsRect().fill(lightorange, 1),
+      clsRect().width(1500, 0.5),
+      clsRect().height(700, 0.5),
+      clsRect().fill(lightorange, 0.5),
 
       clsTxt().text("Classification", 0.5).to("Classification BCE", 0.5),
-      clsTxt().fontSize(70, 1),
-      clsTxt().fill(gray, 1),
-      clsTxt().width(800, 1),
-      clsInner().height(500, 1),
+      clsTxt().fontSize(70, 0.5),
+      clsTxt().fill(gray, 0.5),
+      clsTxt().width(800, 0.5),
+      clsInner().height(500, 0.5),
 
   )
-  yield* clsInner().opacity(1, 1),
+  yield* clsInner().opacity(1, 0.5),
   yield* beginSlide('Attr');
   yield* all(
-      lossLayout().gap(0, 1),
+      lossLayout().gap(0, 0.5),
 
 
-      clsRect().width(0, 1),
-      clsRect().height(500, 1),
-      clsRect().fill(orange, 1),
-      clsTxt().text("Classification \nBCE", 1),
-      clsTxt().width(0, 1),
-      clsTxt().opacity(0, 1),
+      clsRect().width(0, 0.5),
+      clsRect().height(500, 0.5),
+      clsRect().fill(orange, 0.5),
+      clsTxt().text("Classification \nBCE", 0.5),
+      clsTxt().width(0, 0.5),
+      clsTxt().opacity(0, 0.5),
       clsInner().opacity(0, 0.5),
 
-      attrRect().width(1500, 1),
-      attrRect().height(700, 1),
-      attrRect().fill(lightorange, 1),
+      attrRect().width(1500, 0.5),
+      attrRect().height(700, 0.5),
+      attrRect().fill(lightorange, 0.5),
 
       attrTxt().text("Attribute", 0.5).to("Attribute Regularization", 0.5),
-      attrTxt().fontSize(70, 1),
-      attrTxt().fill(gray, 1),
-      attrTxt().width(1000, 1),
-      attrInner().height(500, 1),
+      attrTxt().fontSize(70, 0.5),
+      attrTxt().fill(gray, 0.5),
+      attrTxt().width(1000, 0.5),
+      attrInner().height(500, 0.5),
 
   )
-  yield* attrInner().opacity(1, 1),
+  yield* attrInner().opacity(1, 0.5),
   yield* beginSlide('Ident');
   yield* all(
 
-      attrRect().width(0, 1),
-      attrRect().height(500, 1),
-      attrRect().fill(orange, 1),
-      attrTxt().text("Attribute \nRegularization", 1),
-      attrTxt().width(0, 1),
-      attrTxt().opacity(0, 1),
+      attrRect().width(0, 0.5),
+      attrRect().height(500, 0.5),
+      attrRect().fill(orange, 0.5),
+      attrTxt().text("Attribute \nRegularization", 0.5),
+      attrTxt().width(0, 0.5),
+      attrTxt().opacity(0, 0.5),
       attrInner().opacity(0, 0.5),
 
-      recRect().width(1500, 1),
-      recRect().height(700, 1),
-      recRect().fill(lightorange, 1),
+      recRect().width(1500, 0.5),
+      recRect().height(700, 0.5),
+      recRect().fill(lightorange, 0.5),
 
       recTxt().text("Identity", 0.5).to("Identity Preservation", 0.5),
-      recTxt().fontSize(70, 1),
-      recTxt().fill(gray, 1),
-      recTxt().width(1000, 1),
-      recInner().height(500, 1),
+      recTxt().fontSize(70, 0.5),
+      recTxt().fill(gray, 0.5),
+      recTxt().width(1000, 0.5),
+      recInner().height(500, 0.5),
 
   )
-  yield* recInner().opacity(1, 1),
+  yield* recInner().opacity(1, 0.5),
   yield* beginSlide('total');
   yield* all(
       recRect().fill(orange, 0.5),

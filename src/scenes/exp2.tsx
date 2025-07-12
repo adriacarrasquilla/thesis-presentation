@@ -89,9 +89,9 @@ export default makeScene2D(function* (view) {
             justifyContent={"center"}
           >
             <Txt text="Metrics used" {...textStyle} fontSize={70} padding={20}/>
-            <Txt ref={crTxt} text="Attribute Change Ratio" {...textStyle} fontSize={55} fontWeight={400}/>
-            <Txt ref={apTxt} text="Attribute Preservation Score" {...textStyle} fontSize={55} fontWeight={400}/>
-            <Txt ref={ipTxt} text="Identity Preservation Score" {...textStyle} fontSize={55} fontWeight={400}/>
+            <Txt ref={crTxt} text="Attribute Change Ratio (ACR)" {...textStyle} fontSize={50} fontWeight={400}/>
+            <Txt ref={apTxt} text="Attribute Preservation Score (APS)" {...textStyle} fontSize={50} fontWeight={400}/>
+            <Txt ref={ipTxt} text="Identity Preservation Score (IPS)" {...textStyle} fontSize={50} fontWeight={400}/>
           </Layout>
           <Layout
             ref={rightLayout}
@@ -196,19 +196,19 @@ export default makeScene2D(function* (view) {
   yield* rightLayout().width(900, 0.5);
   yield* all(
     // crTxt().fontWeight(700, 1),
-    crTxt().fontSize(65, 0.5),
+    crTxt().fontSize(55, 0.5),
     crTxt().fill(blue, 0.5),
     crLayout().opacity(1,0.51)
   );
   yield* beginSlide('AP');
   yield* sequence(0.5,
     all(
-      crTxt().fontSize(55, 0.5),
+      crTxt().fontSize(50, 0.5),
       crTxt().fill("#383838", 0.5),
       crLayout().opacity(0, 0.5),
     ),
     all(
-      apTxt().fontSize(65, 0.5),
+      apTxt().fontSize(55, 0.5),
       apTxt().fill(blue, 0.5),
       apLayout().opacity(1,0.51)
     )
@@ -217,12 +217,12 @@ export default makeScene2D(function* (view) {
   yield* beginSlide('IP');
   yield* sequence(0.5,
     all(
-      apTxt().fontSize(55, 0.5),
+      apTxt().fontSize(50, 0.5),
       apTxt().fill("#383838", 0.5),
       apLayout().opacity(0, 0.5),
     ),
     all(
-      ipTxt().fontSize(65, 0.5),
+      ipTxt().fontSize(55, 0.5),
       ipTxt().fill(blue, 0.5),
       ipLayout().opacity(1,0.51)
     )

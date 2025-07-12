@@ -455,67 +455,67 @@ export default makeScene2D(function* (view) {
 );
 
   yield* slideTransition(Direction.Right);
-  yield* beginSlide('Proposal Init');
+  // yield* beginSlide('Proposal Init');
   yield* all(
-    titleBox().height(150, 1),
-    proposalText().fontSize(80, 1),
-    logo().size(76, 1),
-    padTop(10, 1),
-    bodyBox().height(910, 1),
+    titleBox().height(150, 0.5),
+    proposalText().fontSize(80, 0.5),
+    logo().size(76, 0.5),
+    padTop(10, 0.5),
+    bodyBox().height(910, 0.5),
   )
-  yield* proposalText().text("Baseline Components", 1)
-  yield* firstText().opacity(1, 1)
+  yield* proposalText().text("Baseline Components",0.51)
+  yield* firstText().opacity(1,0.51)
   yield* beginSlide('Latent encoder');
   yield* sequence(0.5,
-    firstText().opacity(0, 1),
-    encoderLayout().opacity(1, 1),
+    firstText().opacity(0, 0.5),
+    encoderLayout().opacity(1, 0.5),
   )
   yield* beginSlide('Latent Classifier 1');
   yield* sequence(0.5,
-    encoderLayout().opacity(0, 1),
-    classifierLayout().opacity(1, 1),
+    encoderLayout().opacity(0, 0.5),
+    classifierLayout().opacity(1, 0.5),
   )
   yield* beginSlide('Latent Classifier 2');
   yield* all(
-    latImage().opacity(1, 1),
-    attr1(0.63, 1),
-    attr2(0.99, 1),
-    attr3(0.1, 1),
-    attr4(0.2, 1),
+    latImage().opacity(1, 0.5),
+    attr1(0.63, 0.5),
+    attr2(0.99, 0.5),
+    attr3(0.1, 0.5),
+    attr4(0.2, 0.5),
   )
   yield* beginSlide('Latent Classifier 3');
   yield* all(
-    latImage().opacity(0, 1),
-    trImage().opacity(1, 1),
-    attr1(0.13, 1),
-    attr2(0.32, 1),
-    attr3(0.84, 1),
-    attr4(0.99, 1),
+    latImage().opacity(0, 0.5),
+    trImage().opacity(1, 0.5),
+    attr1(0.13, 0.5),
+    attr2(0.32, 0.5),
+    attr3(0.84, 0.5),
+    attr4(0.99, 0.5),
   )
   yield* beginSlide('Latent Transformer 1');
   yield* all(
-    trImage().opacity(0, 1),
-    classifierLayout().opacity(0,1)
+    trImage().opacity(0, 0.5),
+    classifierLayout().opacity(0, 0.5)
   )
   yield* all(
-    transformerLayout().opacity(1,1)
+    transformerLayout().opacity(1, 0.5)
   )
   yield* beginSlide('Latent Transformer 2');
   yield* all(
-    singImg().alpha(0.2,1),
-    tex().opacity(1,1)
+    singImg().alpha(0.2,0.5),
+    tex().opacity(1, 0.51)
   )
   yield* beginSlide('Latent Transformer 3');
   yield* all(
-    singImg().alpha(0, 1),
-    singImg().fill("#F3722C", 1),
-    singImg().size([100, 100], 1),
-    singImg().radius(20, 1),
-    tex().opacity(0, 1),
-    kTrLayout().height(500,1),
-    kAttrTxt1().height(50,1),
-    kAttrTxt2().height(50,1),
-    kAttrTxt3().height(50,1),
+    singImg().alpha(0, 0.5),
+    singImg().fill("#F3722C", 0.5),
+    singImg().size([100, 100], 0.5),
+    singImg().radius(20, 0.5),
+    tex().opacity(0, 0.5),
+    kTrLayout().height(500,0.5),
+    kAttrTxt1().height(50,0.5),
+    kAttrTxt2().height(50,0.5),
+    kAttrTxt3().height(50,0.5),
   )
   yield* all(
     trRefs[0].size(100, 0),
@@ -528,16 +528,16 @@ export default makeScene2D(function* (view) {
   range(5).map(i => {
     generators1.push(
       all(
-        trRefs[i].size(100, 1),
-        trTxtRefs[i].fontSize(30, 1)
+        trRefs[i].size(100, 0.5),
+        trTxtRefs[i].fontSize(30,0.51)
       )
     )
   })
   yield* all(
-    trRow1().gap(5, 1),
-    trRow2().gap(5, 1),
-    trRow3().gap(5, 1),
-    trRow4().gap(5, 1),
+    trRow1().gap(5, 0.5),
+    trRow2().gap(5, 0.5),
+    trRow3().gap(5, 0.5),
+    trRow4().gap(5, 0.5),
     sequence(0.1, ...generators1),
     k(5, 1.5)
   )
@@ -547,8 +547,8 @@ export default makeScene2D(function* (view) {
   range(5).map(i => {
     generators2.push(
       all(
-        trRefs[i+5].size(100, 1),
-        trTxtRefs[i+5].fontSize(30, 1)
+        trRefs[i+5].size(100, 0.5),
+        trTxtRefs[i+5].fontSize(30,0.51)
       )
     )
   })

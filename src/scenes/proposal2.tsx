@@ -94,7 +94,7 @@ export default makeScene2D(function* (view) {
             opacity={0}
           >
             <Txt
-              text={"Latent Multi-Attribute Transformer"} 
+              text={"LMAT: Latent Multi-Attribute Transformer"} 
               {... textStyle}
               fontSize={60}
             />

@@ -95,7 +95,7 @@ export default makeScene2D(function* (view) {
             direction={'column'}
             gap={50}
           >
-            <Txt text="Experiment: Change Ratio over different attribute
+            <Txt text="Experiment: ACR over different attribute
               coefficient scaling/intensity factors"
               {...textStyle}
               fontSize={40} fontWeight={400} textAlign={'center'}/>

@@ -125,9 +125,8 @@ export default makeScene2D(function* (view) {
             <Rect {...purpleStyle} ref={c4Rect}>
               <Txt 
                 ref={c4Text}
-                text="Our transformations are better at the identity preservation but slightly worse at
-                Target Change Ratio and Attribute Preservation, specially when manipulating
-                more simultaneous attributes
+                text="Our transformations are better at the IPS but slightly worse at ACR and APS,
+                specially when manipulating more simultaneous attributes
                 "
                 {... textStyle} fontSize={35} textAlign={"center"}
               />
@@ -161,7 +160,7 @@ export default makeScene2D(function* (view) {
 );
 
   yield* slideTransition(Direction.Right);
-  yield* beginSlide('Conclus Init');
+  // yield* beginSlide('Conclus Init');
   yield* all(
     titleBox().height(150, 1),
     proposalText().fontSize(80, 1),

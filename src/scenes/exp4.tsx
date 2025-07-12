@@ -86,7 +86,7 @@ export default makeScene2D(function* (view) {
             justifyContent={"center"}
             opacity={0}
           >
-            <Txt text="CR vs AP and IP over fixed n attributes" {... textStyle} fontSize={40}/>
+            <Txt text="ACR vs APS and IPS over fixed n attributes" {... textStyle} fontSize={40}/>
             <Img ref={imgRef1} src={expImg1} width={1400} opacity={1}/>
             <Img ref={imgRef2} src={expImg2} width={1400} opacity={1}/>
           </Layout>
@@ -106,7 +106,7 @@ export default makeScene2D(function* (view) {
       y={805}
       x={481}
     >
-      <Txt text="Evolution of CR compared to AP and IP
+      <Txt text="Evolution of ACR compared to APS and IPS
     over different fixed n attributes and same 
     scaling factors"
         {...textStyle} fill={"#FFFFFF"}
@@ -114,7 +114,7 @@ export default makeScene2D(function* (view) {
     </Rect>
     <Layout
       ref={floatingLayout2}
-      alignItems={"start"}
+      alignItems={"center"}
       justifyContent={"center"}
       width={900}
       height={200}
@@ -123,19 +123,19 @@ export default makeScene2D(function* (view) {
       gap={50}
       layout
       y={80}
-      x={-370}
+      x={0}
     >
-      <Txt text="We achieve better results at identity preservation,
+      <Txt text="We achieve better results at IPS,
           even for larger values of n"
         {...textStyle}
-        fontSize={60} fontWeight={800} textAlign={'left'}/>
+        fontSize={60} fontWeight={800} textAlign={'center'}/>
       <Txt text="When transforming less simultaneous attributes,
-          CR results are very close"
+          ACR results are very close"
         {...textStyle}
-        fontSize={60} fontWeight={800} textAlign={'left'}/>
-      <Txt text="The baseline performs better at attribute preservation"
+        fontSize={60} fontWeight={800} textAlign={'center'}/>
+      <Txt text="The baseline performs better at APS"
         {...textStyle}
-        fontSize={60} fontWeight={800} textAlign={'left'}/>
+        fontSize={60} fontWeight={800} textAlign={'center'}/>
     </Layout>
   </>
 );

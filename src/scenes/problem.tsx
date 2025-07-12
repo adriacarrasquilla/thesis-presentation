@@ -489,73 +489,73 @@ export default makeScene2D(function* (view) {
 
   
   yield* slideTransition(Direction.Right);
-  yield* beginSlide('Attr Manipulation');
+  // yield* beginSlide('Attr Manipulation');
   yield* all(
-    titleBox().height(150, 1),
-    problem().fontSize(80, 1),
-    logo().size(76, 1),
-    padTop(10, 1),
-    bodyBox().height(910, 1),
+    titleBox().height(150, 0.5),
+    problem().fontSize(80, 0.5),
+    logo().size(76, 0.5),
+    padTop(10, 0.5),
+    bodyBox().height(910, 0.5),
   )
   yield* all(
-    leftLayout().position.y(70, 1),
+    leftLayout().position.y(70, 0.5),
   )
   // yield* beginSlide('Setup demo');
   yield* all(
-    woman_img().opacity(1, 1),
-    attrButtons().height(300, 1),
-    attrButtons().opacity(1, 1),
+    woman_img().opacity(1, 0.5),
+    attrButtons().height(300, 0.5),
+    attrButtons().opacity(1, 0.5),
   )
   yield* beginSlide('Change smile');
   yield* all(
-    smileBtn().fill(red, 1),
-    sad_img().opacity(1, 1),
-    singleTxt().opacity(1, 1)
+    smileBtn().fill(red, 0.5),
+    sad_img().opacity(1, 0.5),
+    singleTxt().opacity(1,0.51)
   )
   yield* all(
-    smileBtn().fill(green, 1),
-    sad_img().rotation(180, 1),
+    smileBtn().fill(green, 0.5),
+    sad_img().rotation(180, 0.5),
   )
   // yield* beginSlide('Change nose');
   yield* all(
-    smileBtn().fill(gray, 1),
-    sad_img().opacity(0, 1),
+    smileBtn().fill(gray, 0.5),
+    sad_img().opacity(0, 0.5),
   )
   yield* all(
-    noseBtn().fill(green, 1),
-    nose_img().opacity(1, 1),
+    noseBtn().fill(green, 0.5),
+    nose_img().opacity(1, 0.5),
   )
   yield* all(
-    nose_img().size(200, 1).to(70, 1),
-    noseBtn().fill(green, 1).to(red, 1),
+    nose_img().size(200, 1).to(70, 0.5),
+    noseBtn().fill(green, 1).to(red, 0.5),
   )
   yield* beginSlide('Multi example 1');
   yield* all(
-    blonde_img().opacity(1, 1),
-    blondBtn().fill(green, 1),
-    singleTxt().text("Multi", 1)
+    blonde_img().opacity(1, 0.5),
+    blondBtn().fill(green, 0.5),
+    singleTxt().text("Multi",0.51)
   )
   // yield* beginSlide('Multi example 2');
   yield* all(
-    blonde_img().opacity(0, 1),
-    blondBtn().fill(red, 1),
-    sad_img().opacity(1, 1),
-    smileBtn().fill(green, 1),
-    nose_img().size(150, 1),
-    noseBtn().fill(green, 1)
+    blonde_img().opacity(0, 0.5),
+    blondBtn().fill(red, 0.5),
+    sad_img().opacity(1, 0.5),
+    smileBtn().fill(green, 0.5),
+    nose_img().size(150, 0.5),
+    noseBtn().fill(green,0.51)
   )
   yield* beginSlide('Actual Examples');
   yield* all(
-    leftLayout().position.x(-1500, 1),
-    woman_img().position.x(-1500, 1),
-    goodCmp().position.x(0, 1)
+    leftLayout().position.x(-1500, 0.5),
+    woman_img().position.x(-1500, 0.5),
+    goodCmp().position.x(0,0.51)
   )
   yield* beginSlide('Sequential editing');
   yield* all(
     woman_img().opacity(0,0),
     leftLayout().opacity(0,0),
-    goodCmp().position.x(-1900, 1),
-    sequential().position.x(0, 1)
+    goodCmp().position.x(-1900, 0.5),
+    sequential().position.x(0,0.51)
   )
   // yield* beginSlide('Sequential lines');
   yield* sequence(0.3,

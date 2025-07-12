@@ -141,15 +141,15 @@ export default makeScene2D(function* (view) {
   yield* beginSlide('dataset');
 
   yield* all(
-    leftRect().width(880, 1),
-    rightRect().width(880, 1),
-    bodyBox().gap(30,1)
+    leftRect().width(880, 0.5),
+    rightRect().width(880, 0.5),
+    bodyBox().gap(30, 0.51)
   )
-  yield* ffhqInfo().opacity(1, 1);
+  yield* ffhqInfo().opacity(1, 0.5);
   yield* beginSlide('intro quant');
   yield* all(
-    quantText().fontSize(65, 1),
-    quantRect().fill(blue, 1)
+    quantText().fontSize(65, 0.5),
+    quantRect().fill(blue,0.51)
 
   )
   yield* beginSlide('end');

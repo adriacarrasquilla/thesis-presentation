@@ -26,7 +26,7 @@ export default makeScene2D(function* (view) {
     <>
       <Txt
         ref={title}
-        text={"Latent Multi-Attribute\n Transformer for Face Editing in Images"}
+        text={"LMAT: Latent Multi-Attribute\n Transformer for Face Editing in Images"}
         fill={'#242424'}
         y={800}
         {...textStyle}
