@@ -4,13 +4,13 @@ import {all, createRef, beginSlide, waitUntil, waitFor} from '@motion-canvas/cor
 import upcLogo from '../../img/upc.png';
 import urvLogo from '../../img/urv.png';
 import ubLogo from '../../img/ub.png';
+import isLogo from '../../img/IntelliSysLogo.png';
 
 
 export default makeScene2D(function* (view) {
   const title = createRef<Txt>();
-  const author = createRef<Txt>();
-  const directors = createRef<Txt>();
-  const master = createRef<Txt>();
+  const authors = createRef<Txt>();
+  // const conference = createRef<Txt>();
   const logos = createRef<Layout>();
 
   const textStyle = {
@@ -33,18 +33,8 @@ export default makeScene2D(function* (view) {
         textAlign={'center'}
       />
       <Txt
-        ref={author}
-        text={"Adrià Carrasquilla Fortes"}
-        fill={'#242424'}
-        y={800}
-        {...textStyle}
-        fontWeight={400}
-        fontSize={50}
-        textAlign={'center'}
-      />
-      <Txt
-        ref={directors}
-        text={"Directed by: Dr. Maya Aghaei and Dr. Petia Radeva"}
+        ref={authors}
+        text={"Authors: Adrià Carrasquilla, Dr. Petia Radeva, María Ruiz,  Dr. Maya Aghaei "}
         fill={'#242424'}
         y={800}
         {...textStyle}
@@ -52,32 +42,18 @@ export default makeScene2D(function* (view) {
         fontSize={40}
         textAlign={'center'}
       />
-      <Txt
-        ref={master}
-        text={"MAI Master Thesis - 27/06/2023"}
-        fill={'#242424'}
-        y={800}
-        {...textStyle}
-        fontWeight={700}
-        fontSize={30}
-        textAlign={'center'}
-      />
       <Layout 
         ref={logos} 
         y={800}
       >
         <Img
-          src={upcLogo}
-          width={100}
-        />
-        <Img
-          src={urvLogo}
-          width={120}
+          src={ubLogo}
+          width={150}
           x={-180}
         />
         <Img
-          src={ubLogo}
-          width={100}
+          src={isLogo}
+          width={300}
           x={180}
         />
       </Layout>
@@ -86,14 +62,9 @@ export default makeScene2D(function* (view) {
 
   yield* beginSlide('Start')
   yield* all(
-    title().position.y(-150, 1),
-    author().position.y(-10, 1.3),
-  );
-  yield* beginSlide('Codirectors')
-  yield* all(
-    directors().position.y(150, 1.3),
-    master().position.y(200, 1.6),
-    logos().position.y(350, 1.8)
+    title().position.y(-100, 1.1),
+    authors().position.y(50, 1.3),
+    logos().position.y(200, 1.6)
   )
   yield* beginSlide('EndCover')
 });

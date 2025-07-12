@@ -137,15 +137,15 @@ export default makeScene2D(function* (view) {
 );
 
   yield* slideTransition(Direction.Bottom);
-  yield* leftLayout().opacity(1, 1);
-  yield* floatingLayout().position.y(405, 1);
+  yield* leftLayout().opacity(1, 0.5);
+  yield* floatingLayout().position.y(405, 0.5);
   yield* beginSlide('Explain2');
-  yield* floatingLayout().position.y(805, 1);
+  yield* floatingLayout().position.y(805, 0.5);
   yield* beginSlide('Explain3');
   
   yield* sequence(0.5,
-    leftLayout().opacity(0.2, 1),
-    floatingLayout2().opacity(1,1)
+    leftLayout().opacity(0.2, 0.5),
+    floatingLayout2().opacity(1,0.5)
   )
   yield* beginSlide('End');
 });

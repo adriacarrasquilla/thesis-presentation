@@ -522,7 +522,7 @@ export default makeScene2D(function* (view) {
     trTxtRefs[0].fontSize(30, 0.5),
     singImg().size(0, 0)
   )
-  yield* beginSlide('Latent Transformer 4');
+  // yield* beginSlide('Latent Transformer 4');
 
   const generators1: ThreadGenerator[] = [];
   range(5).map(i => {
@@ -542,7 +542,7 @@ export default makeScene2D(function* (view) {
     k(5, 1.5)
   )
 
-  yield* beginSlide('Latent Transformer 6');
+  // yield* beginSlide('Latent Transformer 6');
   const generators2: ThreadGenerator[] = [];
   range(5).map(i => {
     generators2.push(
@@ -557,7 +557,7 @@ export default makeScene2D(function* (view) {
     k(10, 1.5)
   )
 
-  yield* beginSlide('Latent Transformer 5');
+  // yield* beginSlide('Latent Transformer 5');
   const generators3: ThreadGenerator[] = [];
   range(10).map(i => {
     generators3.push(

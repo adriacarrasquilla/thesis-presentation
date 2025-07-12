@@ -101,6 +101,10 @@ export default makeScene2D(function* (view) {
             <Rect {... blueStyle}>
             <Txt text="Subjective study" {... textStyle}/>
             </Rect>
+            <Rect {... blueStyle}>
+            <Txt text="Comparison to other
+            approaches" {... textStyle} textAlign="center"/>
+            </Rect>
           </Rect>
 
           <Rect ref={rightRect} fill={blue.concat("44")} width={0} height={800} 
@@ -125,14 +129,14 @@ export default makeScene2D(function* (view) {
 );
 
   yield* slideTransition(Direction.Right);
-  yield* beginSlide('Exp Init');
+  // yield* beginSlide('Exp Init');
   yield* all(
-    titleBox().height(150, 1),
-    proposalText().fontSize(80, 1),
-    logo().size(76, 1),
-    bodyBox().height(910, 1),
+    titleBox().height(150, 0.5),
+    proposalText().fontSize(80, 0.5),
+    logo().size(76, 0.5),
+    bodyBox().height(910, 0.5),
   )
-  yield* leftRect().opacity(1,1);
+  yield* leftRect().opacity(1,0.5);
 
   yield* beginSlide('dataset');
 

@@ -240,90 +240,90 @@ export default makeScene2D(function* (view) {
 );
 
   yield* slideTransition(Direction.Right);
-  yield* titleText().text("Subjective Study", 1);
-  yield* descLayout().opacity(1, 1);
+  yield* titleText().text("Subjective Study", 0.5);
+  yield* descLayout().opacity(1, 0.5);
   yield* beginSlide('Example Start');
   yield* all(
-    descLayout().height(0, 1),
-    descLayout().opacity(0, 1),
-    promptLayout().opacity(1, 1),
-    promptLayout().height(600, 1),
+    descLayout().height(0, 0.5),
+    descLayout().opacity(0, 0.5),
+    promptLayout().opacity(1, 0.5),
+    promptLayout().height(600, 0.5),
   )
   yield* beginSlide('Example Choices');
   yield* all(
-    singleRef().size(350, 1),
-    multiRef().opacity(0.3, 1),
-    multiRef().size(200, 1),
-    optA().text("Option A", 1),
+    singleRef().size(350, 0.5),
+    multiRef().opacity(0.3, 0.5),
+    multiRef().size(200, 0.5),
+    optA().text("Option A", 0.5),
   )
   yield* waitFor(0.5);
   yield* all(
-    optA().text("", 1),
-    optB().text("Option B", 1),
-    multiRef().size(350, 1),
-    multiRef().opacity(1, 1),
-    singleRef().opacity(0.3, 1),
-    singleRef().size(200, 1),
+    optA().text("", 0.5),
+    optB().text("Option B", 0.5),
+    multiRef().size(350, 0.5),
+    multiRef().opacity(1, 0.5),
+    singleRef().opacity(0.3, 0.5),
+    singleRef().size(200, 0.5),
   )
   yield* waitFor(0.5);
   yield* all(
-    optA().text("", 1),
-    optB().text("", 1),
-    singleRef().opacity(0.3, 1),
-    multiRef().opacity(0.3, 1),
-    multiRef().size(200, 1),
+    optA().text("", 0.5),
+    optB().text("", 0.5),
+    singleRef().opacity(0.3, 0.5),
+    multiRef().opacity(0.3, 0.5),
+    multiRef().size(200, 0.5),
   )
   yield* all(
-    optBoth().text("Both", 1),
-    singleRef().opacity(1, 1),
-    singleRef().size(350, 1),
-    multiRef().size(350, 1),
-    multiRef().opacity(1, 1),
+    optBoth().text("Both", 0.5),
+    singleRef().opacity(1, 0.5),
+    singleRef().size(350, 0.5),
+    multiRef().size(350, 0.5),
+    multiRef().opacity(1, 0.5),
   )
   yield* beginSlide('Results');
   yield* all(
-    promptLayout().height(0, 1),
-    promptLayout().opacity(0, 1),
-    resultsLayout().opacity(1, 1),
-    resultsLayout().height(600, 1),
+    promptLayout().height(0, 0.5),
+    promptLayout().opacity(0, 0.5),
+    resultsLayout().opacity(1, 0.5),
+    resultsLayout().height(600, 0.5),
   )
   yield* beginSlide('Pie');
   yield* all(
-    pieRef().size(800, 1),
-    winRef().width(600, 1),
-    winRef().opacity(0.1, 1),
-    resultsLayout().gap(250, 1),
-    pieText().opacity(1, 1),
-    pieText().fontSize(55, 1),
+    pieRef().size(800, 0.5),
+    winRef().width(600, 0.5),
+    winRef().opacity(0.1, 0.5),
+    resultsLayout().gap(250, 0.5),
+    pieText().opacity(1, 0.5),
+    pieText().fontSize(55, 0.5),
   )
 
   yield* beginSlide('Winners');
   yield* all(
-    pieRef().size(300, 1),
-    winRef().width(1000, 1),
-    winRef().opacity(1, 1),
-    pieRef().opacity(0.1, 1),
-    resultsLayout().gap(400, 1),
-    pieText().opacity(0, 1),
-    pieText().fontSize(0, 1),
-    winText().opacity(1, 1),
-    winText().fontSize(55, 1),
+    pieRef().size(300, 0.5),
+    winRef().width(1000, 0.5),
+    winRef().opacity(1, 0.5),
+    pieRef().opacity(0.1, 0.5),
+    resultsLayout().gap(400, 0.5),
+    pieText().opacity(0, 0.5),
+    pieText().fontSize(0, 0.5),
+    winText().opacity(1, 0.5),
+    winText().fontSize(55, 0.5),
   )
   yield* beginSlide('Realism');
   yield* all(
-    pieRef().size(600, 1),
-    winRef().width(800, 1),
-    resultsLayout().gap(100, 1),
-    winText().opacity(0, 1),
-    winText().fontSize(0, 1),
-    resultsLayout().opacity(0, 1),
-    resultsLayout().height(0, 1),
-    realismLayout().opacity(1, 1),
-    realismLayout().height(800, 1),
+    pieRef().size(600, 0.5),
+    winRef().width(800, 0.5),
+    resultsLayout().gap(100, 0.5),
+    winText().opacity(0, 0.5),
+    winText().fontSize(0, 0.5),
+    resultsLayout().opacity(0, 0.5),
+    resultsLayout().height(0, 0.5),
+    realismLayout().opacity(1, 0.5),
+    realismLayout().height(800, 0.5),
   )
   yield* beginSlide('Summary');
   yield* all(
-    realismLayout().opacity(0.1, 1),
+    realismLayout().opacity(0.1, 0.5),
     sumText().opacity(1,1)
   )
 

@@ -141,30 +141,30 @@ export default makeScene2D(function* (view) {
 );
 
   yield* slideTransition(Direction.Bottom);
-  yield* leftLayout().opacity(1, 1);
-  yield* floatingLayout().position.y(405, 1);
+  yield* leftLayout().opacity(1, 0.5);
+  yield* floatingLayout().position.y(405, 0.5);
   yield* beginSlide('Explain IP');
   yield* all(
-    floatingLayout().position.y(805, 1),
-    imgRef1().width(1700, 1),
-    imgRef2().width(600, 1),
-    imgRef2().opacity(0.2, 1)
+    floatingLayout().position.y(805, 0.5),
+    imgRef1().width(1700, 0.5),
+    imgRef2().width(600, 0.5),
+    imgRef2().opacity(0.2,0.5)
   )
   yield* beginSlide('Explain AP');
   yield* all(
-    imgRef2().width(1700, 1),
-    imgRef2().opacity(1, 1),
-    imgRef1().width(600, 1),
-    imgRef1().opacity(0.2, 1)
+    imgRef2().width(1700, 0.5),
+    imgRef2().opacity(1, 0.5),
+    imgRef1().width(600, 0.5),
+    imgRef1().opacity(0.2,0.51)
   )
   
   yield* beginSlide('Conclus');
   yield* sequence(0.1,
-    imgRef2().width(1500, 1),
-    imgRef1().width(1500, 1),
-    imgRef1().opacity(1, 1),
-    leftLayout().opacity(0.2, 1),
-    floatingLayout2().opacity(1,1),
+    imgRef2().width(1500, 0.5),
+    imgRef1().width(1500, 0.5),
+    imgRef1().opacity(1, 0.5),
+    leftLayout().opacity(0.2, 0.5),
+    floatingLayout2().opacity(1,0.5),
   )
   yield* beginSlide('End');
 });

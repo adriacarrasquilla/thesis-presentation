@@ -193,70 +193,70 @@ export default makeScene2D(function* (view) {
 );
 
   yield* slideTransition(Direction.Right);
-  yield* beginSlide('Goals Init');
+  // yield* beginSlide('Goals Init');
   yield* all(
-    titleBox().height(150, 1),
-    goalText().fontSize(80, 1),
-    logo().size(76, 1),
-    padTop(10, 1),
-    bodyBox().height(910, 1),
+    titleBox().height(150, 0.5),
+    goalText().fontSize(80, 0.5),
+    logo().size(76, 0.5),
+    padTop(10, 0.5),
+    bodyBox().height(910, 0.5),
   )
   yield* all(
-    secondWidth(600, 1),
-    mainGoal().width(600, 1),
+    secondWidth(600, 0.5),
+    mainGoal().width(600, 0.5),
   )
   yield* beginSlide('First Goal');
   yield* all(
-    secondWidth(0, 1),
-    mainGoal().width(1500, 1),
-    networkImg().width(650, 1),
-    networkImg().opacity(0.05, 1),
+    secondWidth(0, 0.5),
+    mainGoal().width(1500, 0.5),
+    networkImg().width(650, 0.5),
+    networkImg().opacity(0.05, 0.5),
   )
-  yield* mainGoalText().opacity(1,1);
+  yield* mainGoalText().opacity(1,0.5);
   yield* beginSlide('Second Goal');
   yield* all(
     mainGoalText().opacity(0,0.5),
-    secondWidth(600, 1),
-    mainGoal().width(600, 1),
-    networkImg().width(400, 1),
-    networkImg().opacity(1, 1),
+    secondWidth(600, 0.5),
+    mainGoal().width(600, 0.5),
+    networkImg().width(400, 0.5),
+    networkImg().opacity(1, 0.5),
   )
   yield* all(
-    mainGoal().width(0, 1),
-    qualityRect().width(1500, 1),
-    speedRect().height(0, 1),
-    speedImg().width(0,1),
-    secondWidth(1500,1),
-    qualityImg().width(600, 1),
-    qualityImg().opacity(0.05, 1)
+    mainGoal().width(0, 0.5),
+    qualityRect().width(1500, 0.5),
+    speedRect().height(0, 0.5),
+    speedImg().width(0,0.5),
+    secondWidth(1500,0.5),
+    qualityImg().width(600, 0.5),
+    qualityImg().opacity(0.05,0.5)
   )
-  yield* qualityText().opacity(1,1);
+  yield* qualityText().opacity(1,0.5);
   yield* beginSlide('Third Goal');
   yield* all(
     qualityText().opacity(0,0.5),
-    qualityImg().opacity(1, 1),
-    qualityImg().width(250, 1),
-    qualityRect().height(900,1),
-    speedRect().height(900, 1),
-    speedImg().width(200,1),
+    qualityImg().opacity(1, 0.5),
+    qualityImg().width(250, 0.5),
+    qualityRect().height(900,0.5),
+    speedRect().height(900, 0.5),
+    speedImg().width(200,0.5),
   )
   yield* all(
-    qualityRect().height(0, 1),
-    qualityImg().width(0,1),
-    speedImg().width(600, 1),
-    speedImg().opacity(0.05, 1)
+    qualityRect().height(0, 0.5),
+    qualityImg().width(0,0.5),
+    speedImg().width(600, 0.5),
+    speedImg().opacity(0.05,0.51)
   )
-  yield* speedText().opacity(1,1);
+  yield* speedText().opacity(1,0.5);
   yield* beginSlide('Close Slide');
   yield* all(
-    qualityRect().height(900, 1),
-    qualityImg().width(250,1),
-    speedImg().width(200, 1),
-    speedImg().opacity(1, 1),
+    qualityRect().height(900, 0.5),
+    qualityImg().width(250,0.5),
+    speedImg().width(200, 0.5),
+    speedImg().opacity(1, 0.5),
     speedText().opacity(0,0.5),
-    mainGoal().width(600, 1),
-    secondWidth(600, 1),
-    qualityRect().width(600, 1),
+    mainGoal().width(600, 0.5),
+    secondWidth(600, 0.5),
+    qualityRect().width(600, 0.5),
   )
   yield* beginSlide('Close Slide');
 });

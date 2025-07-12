@@ -22,7 +22,6 @@ export default makeScene2D(function* (view) {
   const c5Rect = createRef<Rect>();
   const c5Text = createRef<Txt>();
   const finalText = createRef<Txt>();
-  const finalText2 = createRef<Txt>();
 
   const textStyle = {
     fontWeight: 600,
@@ -154,21 +153,10 @@ export default makeScene2D(function* (view) {
             textAlign={'center'}
             fontSize={70}
             opacity={0}
-            y={-80}
+            y={0}
         />
       </Rect>
     </Layout>
-    <Txt
-        ref={finalText2}
-        text="We are also currently working towards publication of our work"
-        y={300}
-        {... textStyle}
-        layout={false}
-        textAlign={'center'}
-        fontSize={55}
-        opacity={0}
-        fontWeight={400}
-    />
   </>
 );
 
@@ -230,7 +218,6 @@ export default makeScene2D(function* (view) {
     c5Rect().opacity(0.1, 1),
     c5Text().fontSize(30, 1),
     finalText().opacity(1, 1),
-    finalText2().opacity(1, 1)
   )
 
   yield* beginSlide('end');

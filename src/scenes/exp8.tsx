@@ -2,7 +2,7 @@ import {makeScene2D, Txt, Img, Layout, Rect, Latex} from '@motion-canvas/2d';
 import {all, createRef, beginSlide, slideTransition, Direction, sequence, createSignal, range, makeRef, loop, chain, ThreadGenerator, Center} from '@motion-canvas/core';
 
 import logoImg from '../../img/experiments_white.png';
-import overallImg from '../../img/overall_change_ratio.png';
+import overallImg from '../../img/approachesComparison.png';
 import apImg from '../../img/ap.png';
 
 
@@ -58,7 +58,7 @@ export default makeScene2D(function* (view) {
           <Rect width={10} />
           <Txt
             ref={titleText}
-            text={"Quantitative Evaluation"}
+            text={"Comparison to other approaches"}
             {...textStyle}
             fill={"#ffffff"}
             fontSize={80}
@@ -71,10 +71,24 @@ export default makeScene2D(function* (view) {
         height={910}
         alignItems={"center"}
         justifyContent={"center"}
-        direction={"row"}
+        direction={"column"}
         gap={50}
         layout
       >
+          <Layout
+            ref={rightLayout}
+            alignItems={"center"}
+            justifyContent={"center"}
+            width={900}
+            opacity={0}
+            direction={'column'}
+            gap={50}
+          >
+            <Txt text="We compared LMAT with InterfaceGAN, TediGAN,
+                       and StyleCLIP in terms of IPS, APS and, ACR."
+              {...textStyle}
+              fontSize={60} fontWeight={400} textAlign={'center'}/>
+          </Layout>
           <Layout
             ref={leftLayout}
             layout
@@ -84,30 +98,7 @@ export default makeScene2D(function* (view) {
             justifyContent={"center"}
             opacity={0}
           >
-            <Img ref={overallRef} src={overallImg} width={1000}/>
-          </Layout>
-          <Layout
-            ref={rightLayout}
-            alignItems={"center"}
-            justifyContent={"center"}
-            width={0}
-            opacity={0}
-            direction={'column'}
-            gap={50}
-          >
-            <Txt text="Experiment: Change Ratio over different attribute
-              coefficient scaling/intensity factors"
-              {...textStyle}
-              fontSize={40} fontWeight={400} textAlign={'center'}/>
-            <Txt text="Using 1k images from FFHQ, transforming in 
-              each one of them n different random attributes"
-              {...textStyle}
-              fontSize={40} fontWeight={400} textAlign={'center'}/>
-            <Txt text="We achieve better results for lower scaling
-              factors, but worse results on bigger factors
-              (up to 5-10% behind the baseline)"
-              {...textStyle}
-              fontSize={40} fontWeight={800} textAlign={'center'}/>
+            <Img ref={overallRef} src={overallImg} width={0}/>
           </Layout>
       </Rect>
     </Layout>
@@ -115,11 +106,11 @@ export default makeScene2D(function* (view) {
 );
 
   yield* slideTransition(Direction.Bottom);
-  yield* leftLayout().opacity(1, 0.5);
-  yield* all(
-    rightLayout().width(900, 0.5),
-    overallRef().width(800,0.51)
-  )
   yield* rightLayout().opacity(1, 0.5);
+  yield* all(
+    rightLayout().width(600, 0.5),
+    overallRef().width(1300,0.5)
+  )
+  yield* leftLayout().opacity(1, 0.5);
   yield* beginSlide('CR');
 });

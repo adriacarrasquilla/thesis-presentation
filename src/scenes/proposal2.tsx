@@ -279,48 +279,48 @@ export default makeScene2D(function* (view) {
     padTop(10, 0),
     bodyBox().height(910, 0),
   )
-  yield* slideTransition(Direction.Right);
-  yield* proposalText().text("Proposed Architecture", 1)
-  yield* archLayout().opacity(1,1);
-  yield* beginSlide('Latent Transformer');
+  yield* slideTransition(Direction.Right, 0.5);
+  yield* proposalText().text("Proposed Architecture", 0.5)
+  yield* archLayout().opacity(1,0.5);
+  // yield* beginSlide('Latent Transformer');
   yield* all(
-    archImgRef2().opacity(0.2, 1),
-    archImgRef3().opacity(0.2, 1),
-    archImgRef4().opacity(0.2, 1),
-    trText().opacity(1, 1),
+    archImgRef2().opacity(0.2, 0.5),
+    archImgRef3().opacity(0.2, 0.5),
+    archImgRef4().opacity(0.2, 0.5),
+    trText().opacity(1, 0.5),
   )
   yield* beginSlide('Compression');
   yield* all(
-    trText().opacity(0, 1),
-    compText().opacity(1, 1),
-    archImgRef1().opacity(0.2, 1),
-    archImgRef2().opacity(1, 1),
-    archImgRef3().opacity(0.2, 1),
-    archImgRef4().opacity(0.2, 1),
+    trText().opacity(0, 0.5),
+    compText().opacity(1, 0.5),
+    archImgRef1().opacity(0.2, 0.5),
+    archImgRef2().opacity(1, 0.5),
+    archImgRef3().opacity(0.2, 0.5),
+    archImgRef4().opacity(0.2, 0.5),
   )
   yield* beginSlide('multiplication');
   yield* all(
-    compText().opacity(0, 1),
-    multText().opacity(1, 1),
-    archImgRef1().opacity(0.2, 1),
-    archImgRef2().opacity(0.2, 1),
-    archImgRef3().opacity(1, 1),
-    archImgRef4().opacity(0.2, 1),
+    compText().opacity(0, 0.5),
+    multText().opacity(1, 0.5),
+    archImgRef1().opacity(0.2, 0.5),
+    archImgRef2().opacity(0.2, 0.5),
+    archImgRef3().opacity(1, 0.5),
+    archImgRef4().opacity(0.2, 0.5),
   )
   yield* beginSlide('Merging');
   yield* all(
-    multText().opacity(0, 1),
-    mergText().opacity(1, 1),
-    archImgRef1().opacity(0.2, 1),
-    archImgRef2().opacity(0.2, 1),
-    archImgRef3().opacity(0.2, 1),
-    archImgRef4().opacity(1, 1),
+    multText().opacity(0, 0.5),
+    mergText().opacity(1, 0.5),
+    archImgRef1().opacity(0.2, 0.5),
+    archImgRef2().opacity(0.2, 0.5),
+    archImgRef3().opacity(0.2, 0.5),
+    archImgRef4().opacity(1, 0.5),
   )
   yield* beginSlide('Summary');
   yield* all(
-    mergText().opacity(0, 1),
-    archImgRef4().opacity(0.2, 1),
-    tex().opacity(1,1),
+    mergText().opacity(0, 0.5),
+    archImgRef4().opacity(0.2, 0.5),
+    tex().opacity(1,0.5),
   )
   yield* beginSlide('End');
 });

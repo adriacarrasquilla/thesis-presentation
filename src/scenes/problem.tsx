@@ -500,7 +500,7 @@ export default makeScene2D(function* (view) {
   yield* all(
     leftLayout().position.y(70, 1),
   )
-  yield* beginSlide('Setup demo');
+  // yield* beginSlide('Setup demo');
   yield* all(
     woman_img().opacity(1, 1),
     attrButtons().height(300, 1),
@@ -516,7 +516,7 @@ export default makeScene2D(function* (view) {
     smileBtn().fill(green, 1),
     sad_img().rotation(180, 1),
   )
-  yield* beginSlide('Change nose');
+  // yield* beginSlide('Change nose');
   yield* all(
     smileBtn().fill(gray, 1),
     sad_img().opacity(0, 1),
@@ -535,7 +535,7 @@ export default makeScene2D(function* (view) {
     blondBtn().fill(green, 1),
     singleTxt().text("Multi", 1)
   )
-  yield* beginSlide('Multi example 2');
+  // yield* beginSlide('Multi example 2');
   yield* all(
     blonde_img().opacity(0, 1),
     blondBtn().fill(red, 1),
@@ -557,26 +557,26 @@ export default makeScene2D(function* (view) {
     goodCmp().position.x(-1900, 1),
     sequential().position.x(0, 1)
   )
-  yield* beginSlide('Sequential lines');
+  // yield* beginSlide('Sequential lines');
   yield* sequence(0.3,
     goodCmp().opacity(0,0),
-    sequential_text().opacity(1, 1),
-    s_org_smile().opacity(1, 1),
-    smile_img().opacity(1, 1),
-    s_smile_goatee().opacity(1, 1),
-    goatee_img().opacity(1, 1),
-    s_goatee_glass().opacity(1, 1),
-    glasses_img().opacity(1, 1)
+    sequential_text().opacity(1, 0.5),
+    s_org_smile().opacity(1, 0.5),
+    smile_img().opacity(1, 0.5),
+    s_smile_goatee().opacity(1, 0.5),
+    goatee_img().opacity(1, 0.5),
+    s_goatee_glass().opacity(1, 0.5),
+    glasses_img().opacity(1, 0.5)
   )
   yield* beginSlide('Simultaneous lines');
   yield* sequence(0.3,
     all(
-      sequential_text().opacity(0.3, 1),
-      simultaneous_text().opacity(1, 1),
+      sequential_text().opacity(0.3, 0.5),
+      simultaneous_text().opacity(1, 0.5),
     ),
-    m_org_tr().opacity(1, 1),
-    all_attrs_txt().opacity(1, 1),
-    m_tr_out().opacity(1, 1)
+    m_org_tr().opacity(1, 0.5),
+    all_attrs_txt().opacity(1, 0.5),
+    m_tr_out().opacity(1, 0.5)
   )
   yield* beginSlide('end');
 

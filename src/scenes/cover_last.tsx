@@ -1,8 +1,7 @@
 import {makeScene2D, Txt, Img, Layout} from '@motion-canvas/2d';
 import {all, createRef, beginSlide, waitUntil, waitFor, Direction, slideTransition} from '@motion-canvas/core';
 
-import upcLogo from '../../img/upc.png';
-import urvLogo from '../../img/urv.png';
+import isLogo from '../../img/IntelliSysLogo.png';
 import ubLogo from '../../img/ub.png';
 
 
@@ -35,17 +34,7 @@ export default makeScene2D(function* (view) {
       />
       <Txt
         ref={author}
-        text={"Adrià Carrasquilla Fortes"}
-        fill={'#242424'}
-        y={800}
-        {...textStyle}
-        fontWeight={400}
-        fontSize={50}
-        textAlign={'center'}
-      />
-      <Txt
-        ref={directors}
-        text={"Directed by: Dr. Maya Aghaei and Dr. Petia Radeva"}
+        text={"Authors: Adrià Carrasquilla, Dr. Petia Radeva, María Ruiz,  Dr. Maya Aghaei "}
         fill={'#242424'}
         y={800}
         {...textStyle}
@@ -53,32 +42,18 @@ export default makeScene2D(function* (view) {
         fontSize={40}
         textAlign={'center'}
       />
-      <Txt
-        ref={master}
-        text={"MAI Master Thesis"}
-        fill={'#242424'}
-        y={800}
-        {...textStyle}
-        fontWeight={700}
-        fontSize={30}
-        textAlign={'center'}
-      />
       <Layout 
         ref={logos} 
         y={800}
       >
         <Img
-          src={upcLogo}
-          width={100}
-        />
-        <Img
-          src={urvLogo}
-          width={120}
+          src={ubLogo}
+          width={150}
           x={-180}
         />
         <Img
-          src={ubLogo}
-          width={100}
+          src={isLogo}
+          width={300}
           x={180}
         />
       </Layout>
@@ -90,9 +65,7 @@ export default makeScene2D(function* (view) {
     author().position.y(-10, 0),
   );
   yield* all(
-    directors().position.y(150, 0),
-    master().position.y(200, 0),
-    logos().position.y(350, 0)
+    logos().position.y(200, 0)
   )
   yield* slideTransition(Direction.Left);
   yield* beginSlide('END')

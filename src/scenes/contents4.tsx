@@ -71,8 +71,7 @@ export default makeScene2D(function* (view) {
 
   
   yield* slideTransition(Direction.Left)
-  yield* beginSlide('Contents Start');
-  const delay = 1.5;
+  const delay = 0.8;
   yield* all(
     experiments().fontSize(120, delay),
     experiments().fill(blue, delay),
@@ -85,5 +84,5 @@ export default makeScene2D(function* (view) {
     logo().position.y(140, delay),
     logo().position.x(200, delay)
   )
-  yield* beginSlide('Contents End');
+  // yield* beginSlide('Contents End');
 });

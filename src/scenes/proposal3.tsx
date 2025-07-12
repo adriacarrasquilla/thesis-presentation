@@ -269,20 +269,20 @@ export default makeScene2D(function* (view) {
     padTop(10, 0),
     bodyBox().height(910, 0),
   )
-  yield* slideTransition(Direction.Right);
-  yield* proposalText().text("Training Losses", 1)
+  yield* slideTransition(Direction.Right, 0.5);
+  yield* proposalText().text("Training Losses",0.51)
   yield* sequence(0.2,
     all(
-      clsRect().width(500, 1),
-      clsTxt().width(500, 1),
+      clsRect().width(500, 0.5),
+      clsTxt().width(500, 0.5),
     ),
     all(
-      attrRect().width(500, 1),
-      attrTxt().width(500, 1),
+      attrRect().width(500, 0.5),
+      attrTxt().width(500, 0.5),
     ),
     all(
-      recRect().width(500, 1),
-      recTxt().width(500, 1),
+      recRect().width(500, 0.5),
+      recTxt().width(500, 0.5),
     ),
   )
   yield* beginSlide('BCE');
@@ -356,35 +356,35 @@ export default makeScene2D(function* (view) {
   yield* recInner().opacity(1, 1),
   yield* beginSlide('total');
   yield* all(
-      recRect().fill(orange, 1),
-      recRect().width(500, 1),
-      recRect().height(500, 1),
-      recTxt().text("Identity\n Preservation", 1),
-      recTxt().fontSize(60, 1),
-      recTxt().fill("#FFFFFF", 1),
-      recInner().height(0, 1),
+      recRect().fill(orange, 0.5),
+      recRect().width(500, 0.5),
+      recRect().height(500, 0.5),
+      recTxt().text("Identity\n Preservation", 0.5),
+      recTxt().fontSize(60, 0.5),
+      recTxt().fill("#FFFFFF", 0.5),
+      recInner().height(0, 0.5),
 
-      attrRect().width(500, 1),
-      attrRect().height(500, 1),
-      attrTxt().fontSize(60, 1),
-      attrTxt().fill("#FFFFFF", 1),
-      attrTxt().width(500, 1),
-      attrTxt().opacity(1, 1),
-      attrInner().height(0, 1),
+      attrRect().width(500, 0.5),
+      attrRect().height(500, 0.5),
+      attrTxt().fontSize(60, 0.5),
+      attrTxt().fill("#FFFFFF", 0.5),
+      attrTxt().width(500, 0.5),
+      attrTxt().opacity(1, 0.5),
+      attrInner().height(0, 0.5),
 
-      clsRect().width(500, 1),
-      clsRect().height(500, 1),
-      clsTxt().fontSize(60, 1),
-      clsTxt().fill("#FFFFFF", 1),
-      clsTxt().width(500, 1),
-      clsTxt().opacity(1, 1),
-      clsInner().height(0, 1),
+      clsRect().width(500, 0.5),
+      clsRect().height(500, 0.5),
+      clsTxt().fontSize(60, 0.5),
+      clsTxt().fill("#FFFFFF", 0.5),
+      clsTxt().width(500, 0.5),
+      clsTxt().opacity(1, 0.5),
+      clsInner().height(0, 0.5),
 
-      lossLayout().gap(50, 1),
+      lossLayout().gap(50, 0.5),
       recInner().opacity(0, 0.5),
 
   )
-  yield* lossLayout().opacity(0.1, 1.5);
-  yield* totalLoss().opacity(1, 1);
+  yield* lossLayout().opacity(0.1, 0.5);
+  yield* totalLoss().opacity(1, 0.5);
   yield* beginSlide('End');
 });

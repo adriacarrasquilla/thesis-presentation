@@ -187,98 +187,98 @@ export default makeScene2D(function* (view) {
   yield* slideTransition(Direction.Right);
   yield* titleText().text("Ablation Study", 1);
   yield* all(
-    cmpBlock().width(800, 1),
-    mulBlock().width(800, 1),
-    cmpTitle().width(800, 1),
-    mulTitle().width(800, 1),
+    cmpBlock().width(800, 0.5),
+    mulBlock().width(800, 0.5),
+    cmpTitle().width(800, 0.5),
+    mulTitle().width(800, 0.5),
   )
   yield* beginSlide('Cmp Block');
   yield* all(
-    mulBlock().width(0, 1),
-    mulTitle().width(0, 1),
-    cmpTitle().text("Reduction and Upscaling Block", 1),
-    cmpTitle().width(1500, 1),
-    cmpTitle().fontSize(60, 1),
-    cmpTitle().fill("#282828", 1),
-    cmpTitle().y(-250, 1),
-    cmpBlock().width(1500, 1),
-    cmpBlock().fill(blue.concat("88"), 1),
+    mulBlock().width(0, 0.5),
+    mulTitle().width(0, 0.5),
+    cmpTitle().text("Reduction and Upscaling Block", 0.5),
+    cmpTitle().width(1500, 0.5),
+    cmpTitle().fontSize(60, 0.5),
+    cmpTitle().fill("#282828", 0.5),
+    cmpTitle().y(-250, 0.5),
+    cmpBlock().width(1500, 0.5),
+    cmpBlock().fill(blue.concat("88"), 0.5),
   )
-  yield* cmpDescText().opacity(1,1);
+  yield* cmpDescText().opacity(1,0.5);
   yield* beginSlide('Cmp Image');
-  yield* cmpDescText().opacity(0,1);
+  yield* cmpDescText().opacity(0,0.5);
   yield* all(
-    cmpImgRef().opacity(1,1),
-    cmpImgRef().width(1000,1),
+    cmpImgRef().opacity(1,0.5),
+    cmpImgRef().width(1000,0.5),
   );
   yield* all(
-    cmpDescText().text("Compressing the transformed vector into\n 512 elements is the optimal rate.\n\n We cannot see a negative impact and using lower\n compression rates achieves slightly worse results.",1),
-    cmpDescText().textAlign("center", 1)
+    cmpDescText().text("Compressing the transformed vector into\n 512 elements is the optimal rate.\n\n We cannot see a negative impact and using lower\n compression rates achieves slightly worse results.",0.5),
+    cmpDescText().textAlign("center",0.51)
   )
   yield* beginSlide('Cmp conclusion');
   yield* all(
-    cmpImgRef().opacity(0,1),
-    cmpImgRef().width(0,1),
-    cmpDescText().opacity(1,1),
-    cmpTitle().y(-200, 1),
+    cmpImgRef().opacity(0,0.5),
+    cmpImgRef().width(0,0.5),
+    cmpDescText().opacity(1,0.5),
+    cmpTitle().y(-200, 0.5),
   );
   yield* beginSlide('mul block');
   yield* all(
     cmpDescText().opacity(0,0.5),
-    cmpTitle().y(0, 1),
-    cmpTitle().fill("#ffffff", 1),
-    cmpTitle().text("Reduction and\n Upscaling Block", 1),
-    cmpTitle().fontSize(80, 1),
-    cmpBlock().fill(blue, 1),
-    cmpBlock().width(800, 1),
-    mulBlock().width(800, 1),
-    mulTitle().width(800, 1),
+    cmpTitle().y(0, 0.5),
+    cmpTitle().fill("#ffffff", 0.5),
+    cmpTitle().text("Reduction and\n Upscaling Block", 0.5),
+    cmpTitle().fontSize(80, 0.5),
+    cmpBlock().fill(blue, 0.5),
+    cmpBlock().width(800, 0.5),
+    mulBlock().width(800, 0.5),
+    mulTitle().width(800, 0.5),
   );
   yield* all(
-    cmpBlock().width(0, 1),
-    cmpTitle().width(0, 1),
-    mulTitle().text("Multiplication Block", 1),
-    mulTitle().width(1500, 1),
-    mulTitle().fontSize(60, 1),
-    mulTitle().fill("#282828", 1),
-    mulTitle().y(-100, 1),
-    mulBlock().width(1500, 1),
-    mulBlock().fill(blue.concat("88"), 1),
+    cmpBlock().width(0, 0.5),
+    cmpTitle().width(0, 0.5),
+    mulTitle().text("Multiplication Block", 0.5),
+    mulTitle().width(1500, 0.5),
+    mulTitle().fontSize(60, 0.5),
+    mulTitle().fill("#282828", 0.5),
+    mulTitle().y(-100, 0.5),
+    mulBlock().width(1500, 0.5),
+    mulBlock().fill(blue.concat("88"), 0.5),
   )
-  yield* mulDescText().opacity(1,1);
+  yield* mulDescText().opacity(1,0.5);
   yield* beginSlide('Mul img');
   yield* mulDescText().opacity(0,0.5);
   yield* all(
-    mulImgRef().opacity(1,1),
+    mulImgRef().opacity(1,0.5),
     // mulImgRef().width(1400,1),
-    bodyBox().gap(0,1),
-    mulImgRef().width(1750,1),
-    mulBlock().width(1800, 1),
+    bodyBox().gap(0,0.5),
+    mulImgRef().width(1750,0.5),
+    mulBlock().width(1800, 0.5),
   );
   yield* all(
-    mulDescText().text("It is not possible to control the intensity\n and direction of the transformation without\n a multiplication operation",1),
+    mulDescText().text("It is not possible to control the intensity\n and direction of the transformation without\n a multiplication operation",0.5),
   )
   yield* beginSlide('Mul conclusion');
   yield* all(
-    mulImgRef().opacity(0,1),
-    mulImgRef().width(0,1),
-    mulDescText().opacity(1,1),
-    mulTitle().y(-150, 1),
-    mulBlock().width(1500, 1),
+    mulImgRef().opacity(0,0.5),
+    mulImgRef().width(0,0.5),
+    mulDescText().opacity(1,0.5),
+    mulTitle().y(-150, 0.5),
+    mulBlock().width(1500, 0.5),
   );
   
   yield* beginSlide('b4 end');
   yield* all(
-    bodyBox().gap(50,1),
+    bodyBox().gap(50,0.5),
     mulDescText().opacity(0,0.5),
-    mulTitle().y(0, 1),
-    mulTitle().fill("#ffffff", 1),
-    mulTitle().text("Reduction and\n Upscaling Block", 1),
-    mulTitle().fontSize(80, 1),
-    mulBlock().fill(blue, 1),
-    cmpBlock().width(800, 1),
-    mulBlock().width(800, 1),
-    cmpTitle().width(800, 1),
+    mulTitle().y(0, 0.5),
+    mulTitle().fill("#ffffff", 0.5),
+    mulTitle().text("Reduction and\n Upscaling Block", 0.5),
+    mulTitle().fontSize(80, 0.5),
+    mulBlock().fill(blue, 0.5),
+    cmpBlock().width(800, 0.5),
+    mulBlock().width(800, 0.5),
+    cmpTitle().width(800, 0.5),
   );
   yield* beginSlide('End');
 });

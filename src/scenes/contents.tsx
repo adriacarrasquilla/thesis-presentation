@@ -91,18 +91,19 @@ export default makeScene2D(function* (view) {
   );
 
   
+  const menuDelay = 0.5;
   yield* all(
     slideTransition(Direction.Right),
     sequence(0.3,
-      problem().opacity(1, 1),
-      goals().opacity(1, 1),
-      proposal().opacity(1, 1),
-      experiments().opacity(1, 1),
-      conclusion().opacity(1, 1),
+      problem().opacity(1, menuDelay),
+      goals().opacity(1, menuDelay),
+      proposal().opacity(1, menuDelay),
+      experiments().opacity(1, menuDelay),
+      conclusion().opacity(1, menuDelay),
     )
   )
   yield* beginSlide('Contents Start');
-  const delay = 1.5;
+  const delay = 0.5;
   yield* all(
     problem().fontSize(120, delay),
     problem().fill("#f94144", delay),

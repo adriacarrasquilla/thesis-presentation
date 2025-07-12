@@ -192,39 +192,39 @@ export default makeScene2D(function* (view) {
 
   yield* slideTransition(Direction.Right);
   yield* proposalText().text("Quantitative Evaluation",1)
-  yield* beginSlide('CR');
-  yield* rightLayout().width(900, 1);
+  // yield* beginSlide('CR');
+  yield* rightLayout().width(900, 0.5);
   yield* all(
     // crTxt().fontWeight(700, 1),
-    crTxt().fontSize(65, 1),
-    crTxt().fill(blue, 1),
-    crLayout().opacity(1, 1)
+    crTxt().fontSize(65, 0.5),
+    crTxt().fill(blue, 0.5),
+    crLayout().opacity(1,0.51)
   );
   yield* beginSlide('AP');
   yield* sequence(0.5,
     all(
-      crTxt().fontSize(55, 1),
-      crTxt().fill("#383838", 1),
-      crLayout().opacity(0, 1),
+      crTxt().fontSize(55, 0.5),
+      crTxt().fill("#383838", 0.5),
+      crLayout().opacity(0, 0.5),
     ),
     all(
-      apTxt().fontSize(65, 1),
-      apTxt().fill(blue, 1),
-      apLayout().opacity(1, 1)
+      apTxt().fontSize(65, 0.5),
+      apTxt().fill(blue, 0.5),
+      apLayout().opacity(1,0.51)
     )
   )
 
   yield* beginSlide('IP');
   yield* sequence(0.5,
     all(
-      apTxt().fontSize(55, 1),
-      apTxt().fill("#383838", 1),
-      apLayout().opacity(0, 1),
+      apTxt().fontSize(55, 0.5),
+      apTxt().fill("#383838", 0.5),
+      apLayout().opacity(0, 0.5),
     ),
     all(
-      ipTxt().fontSize(65, 1),
-      ipTxt().fill(blue, 1),
-      ipLayout().opacity(1, 1)
+      ipTxt().fontSize(65, 0.5),
+      ipTxt().fill(blue, 0.5),
+      ipLayout().opacity(1,0.51)
     )
   )
   yield* beginSlide('end');

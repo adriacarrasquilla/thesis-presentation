@@ -18,6 +18,7 @@ import exp4 from './scenes/exp4?scene';
 import exp5 from './scenes/exp5?scene';
 import exp6 from './scenes/exp6?scene';
 import exp7 from './scenes/exp7?scene';
+import exp8 from './scenes/exp8?scene';
 import contents5 from './scenes/contents5?scene';
 import conclusion from './scenes/conclusion?scene';
 import future from './scenes/future?scene';
@@ -46,10 +47,11 @@ export default makeProject({
     exp5,
     exp6,
     exp7,
+    exp8,
     contents5,
     conclusion,
-    future,
-    demo,
+    // future,
+    // demo,
     end,
   ],
 });
