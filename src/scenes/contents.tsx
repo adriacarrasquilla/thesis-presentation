@@ -94,7 +94,7 @@ export default makeScene2D(function* (view) {
   const menuDelay = 0.5;
   yield* all(
     slideTransition(Direction.Right),
-    sequence(0.3,
+    sequence(0.15,
       problem().opacity(1, menuDelay),
       goals().opacity(1, menuDelay),
       proposal().opacity(1, menuDelay),
@@ -116,5 +116,5 @@ export default makeScene2D(function* (view) {
     logo().position.y(-310, delay),
     logo().position.x(100, delay)
   )
-  yield* beginSlide('Contents End');
+  // yield* beginSlide('Contents End');
 });

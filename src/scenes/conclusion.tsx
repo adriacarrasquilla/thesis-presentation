@@ -13,14 +13,16 @@ export default makeScene2D(function* (view) {
   const leftRect = createRef<Rect>();
   const c1Rect = createRef<Rect>();
   const c1Text = createRef<Txt>();
-  const c2Rect = createRef<Rect>();
-  const c2Text = createRef<Txt>();
+  // const c2Rect = createRef<Rect>();
+  // const c2Text = createRef<Txt>();
   const c3Rect = createRef<Rect>();
   const c3Text = createRef<Txt>();
   const c4Rect = createRef<Rect>();
   const c4Text = createRef<Txt>();
   const c5Rect = createRef<Rect>();
   const c5Text = createRef<Txt>();
+  const c6Rect = createRef<Rect>();
+  const c6Text = createRef<Txt>();
   const finalText = createRef<Txt>();
 
   const textStyle = {
@@ -104,14 +106,6 @@ export default makeScene2D(function* (view) {
     
             </Rect>
 
-            <Rect {...purpleStyle} ref={c2Rect}>
-              <Txt ref={c2Text}
-                text="We proposed three different types of evaluation: quantitative, 
-                performance and subjective"
-                {... textStyle} fontSize={35} textAlign={"center"}
-              />
-    
-            </Rect>
 
             <Rect {...purpleStyle} ref={c3Rect}>
               <Txt 
@@ -136,6 +130,13 @@ export default makeScene2D(function* (view) {
                 ref={c5Text}
                 text="The subjective study proved how our results were more appealing and realistic.
                 We achieved more votes than the baseline"
+                {... textStyle} fontSize={35} textAlign={"center"}
+              />
+            </Rect>
+            <Rect {...purpleStyle} ref={c6Rect}>
+              <Txt 
+                ref={c6Text}
+                text="LMAT outperforms other approaches in almost all metrics"
                 {... textStyle} fontSize={35} textAlign={"center"}
               />
             </Rect>
@@ -172,30 +173,34 @@ export default makeScene2D(function* (view) {
   yield* beginSlide('c1');
   yield* all(
     c1Text().fontSize(41, 1),
-    c2Rect().opacity(0.1, 1),
+    // c2Rect().opacity(0.1, 1),
     c3Rect().opacity(0.1, 1),
     c4Rect().opacity(0.1, 1),
     c5Rect().opacity(0.1, 1),
-    c2Text().fontSize(30, 1),
+    c6Rect().opacity(0.1, 1),
+    // c2Text().fontSize(30, 1),
     c3Text().fontSize(30, 1),
     c4Text().fontSize(30, 1),
     c5Text().fontSize(30, 1),
+    c6Text().fontSize(30, 1),
   )
 
-  yield* beginSlide('c2');
-  yield* all(
-    c2Text().fontSize(41, 1),
-    c2Rect().opacity(1, 1),
-    c1Rect().opacity(0.1, 1),
-    c1Text().fontSize(30, 1),
-  )
+  // yield* beginSlide('c2');
+  // yield* all(
+  //   // c2Text().fontSize(41, 1),
+  //   c2Rect().opacity(1, 1),
+  //   c1Rect().opacity(0.1, 1),
+  //   c1Text().fontSize(30, 1),
+  // )
 
   yield* beginSlide('c3');
   yield* all(
     c3Text().fontSize(40, 1),
     c3Rect().opacity(1, 1),
-    c2Rect().opacity(0.1, 1),
-    c2Text().fontSize(30, 1),
+    // c2Rect().opacity(0.1, 1),
+    // c2Text().fontSize(30, 1),
+    c1Rect().opacity(0.1, 1),
+    c1Text().fontSize(30, 1),
   )
 
   yield* beginSlide('c4');
@@ -212,12 +217,31 @@ export default makeScene2D(function* (view) {
     c4Rect().opacity(0.1, 1),
     c4Text().fontSize(30, 1),
   )
-  yield* beginSlide('final');
+  yield* beginSlide('c6');
   yield* all(
+    c6Text().fontSize(41, 1),
+    c6Rect().opacity(1, 1),
     c5Rect().opacity(0.1, 1),
     c5Text().fontSize(30, 1),
+  )
+  yield* beginSlide('final');
+  yield* all(
+    c6Rect().opacity(0.1, 1),
+    c6Text().fontSize(30, 1),
     finalText().opacity(1, 1),
   )
 
   yield* beginSlide('end');
 });
+
+
+
+
+    //         <Rect {...purpleStyle} ref={c2Rect}>
+    //           <Txt ref={c2Text}
+    //             text="We proposed three different types of evaluation: quantitative, 
+    //             performance and subjective"
+    //             {... textStyle} fontSize={35} textAlign={"center"}
+    //           />
+    // 
+    //         </Rect>

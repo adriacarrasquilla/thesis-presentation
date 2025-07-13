@@ -242,46 +242,48 @@ export default makeScene2D(function* (view) {
   yield* slideTransition(Direction.Right);
   yield* titleText().text("Subjective Study", 0.5);
   yield* descLayout().opacity(1, 0.5);
-  yield* beginSlide('Example Start');
+  // yield* beginSlide('Example Start');
+  // yield* all(
+  //   descLayout().height(0, 0.5),
+  //   descLayout().opacity(0, 0.5),
+  //   promptLayout().opacity(1, 0.5),
+  //   promptLayout().height(600, 0.5),
+  // )
+  // yield* beginSlide('Example Choices');
+  // yield* all(
+  //   singleRef().size(350, 0.5),
+  //   multiRef().opacity(0.3, 0.5),
+  //   multiRef().size(200, 0.5),
+  //   optA().text("Option A", 0.5),
+  // )
+  // yield* waitFor(0.5);
+  // yield* all(
+  //   optA().text("", 0.5),
+  //   optB().text("Option B", 0.5),
+  //   multiRef().size(350, 0.5),
+  //   multiRef().opacity(1, 0.5),
+  //   singleRef().opacity(0.3, 0.5),
+  //   singleRef().size(200, 0.5),
+  // )
+  // yield* waitFor(0.5);
+  // yield* all(
+  //   optA().text("", 0.5),
+  //   optB().text("", 0.5),
+  //   singleRef().opacity(0.3, 0.5),
+  //   multiRef().opacity(0.3, 0.5),
+  //   multiRef().size(200, 0.5),
+  // )
+  // yield* all(
+  //   optBoth().text("Both", 0.5),
+  //   singleRef().opacity(1, 0.5),
+  //   singleRef().size(350, 0.5),
+  //   multiRef().size(350, 0.5),
+  //   multiRef().opacity(1, 0.5),
+  // )
+  yield* beginSlide('Results');
   yield* all(
     descLayout().height(0, 0.5),
     descLayout().opacity(0, 0.5),
-    promptLayout().opacity(1, 0.5),
-    promptLayout().height(600, 0.5),
-  )
-  yield* beginSlide('Example Choices');
-  yield* all(
-    singleRef().size(350, 0.5),
-    multiRef().opacity(0.3, 0.5),
-    multiRef().size(200, 0.5),
-    optA().text("Option A", 0.5),
-  )
-  yield* waitFor(0.5);
-  yield* all(
-    optA().text("", 0.5),
-    optB().text("Option B", 0.5),
-    multiRef().size(350, 0.5),
-    multiRef().opacity(1, 0.5),
-    singleRef().opacity(0.3, 0.5),
-    singleRef().size(200, 0.5),
-  )
-  yield* waitFor(0.5);
-  yield* all(
-    optA().text("", 0.5),
-    optB().text("", 0.5),
-    singleRef().opacity(0.3, 0.5),
-    multiRef().opacity(0.3, 0.5),
-    multiRef().size(200, 0.5),
-  )
-  yield* all(
-    optBoth().text("Both", 0.5),
-    singleRef().opacity(1, 0.5),
-    singleRef().size(350, 0.5),
-    multiRef().size(350, 0.5),
-    multiRef().opacity(1, 0.5),
-  )
-  yield* beginSlide('Results');
-  yield* all(
     promptLayout().height(0, 0.5),
     promptLayout().opacity(0, 0.5),
     resultsLayout().opacity(1, 0.5),

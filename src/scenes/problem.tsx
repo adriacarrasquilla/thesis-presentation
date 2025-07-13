@@ -550,34 +550,39 @@ export default makeScene2D(function* (view) {
     woman_img().position.x(-1500, 0.5),
     goodCmp().position.x(0,0.51)
   )
-  yield* beginSlide('Sequential editing');
+
   yield* all(
     woman_img().opacity(0,0),
-    leftLayout().opacity(0,0),
-    goodCmp().position.x(-1900, 0.5),
-    sequential().position.x(0,0.51)
-  )
-  // yield* beginSlide('Sequential lines');
-  yield* sequence(0.3,
-    goodCmp().opacity(0,0),
-    sequential_text().opacity(1, 0.5),
-    s_org_smile().opacity(1, 0.5),
-    smile_img().opacity(1, 0.5),
-    s_smile_goatee().opacity(1, 0.5),
-    goatee_img().opacity(1, 0.5),
-    s_goatee_glass().opacity(1, 0.5),
-    glasses_img().opacity(1, 0.5)
-  )
-  yield* beginSlide('Simultaneous lines');
-  yield* sequence(0.3,
-    all(
-      sequential_text().opacity(0.3, 0.5),
-      simultaneous_text().opacity(1, 0.5),
-    ),
-    m_org_tr().opacity(1, 0.5),
-    all_attrs_txt().opacity(1, 0.5),
-    m_tr_out().opacity(1, 0.5)
-  )
+    leftLayout().opacity(0,0)
+  );
+  // yield* beginSlide('Sequential editing');
+  // yield* all(
+  //   woman_img().opacity(0,0),
+  //   leftLayout().opacity(0,0),
+  //   goodCmp().position.x(-1900, 0.5),
+  //   sequential().position.x(0,0.51)
+  // )
+  // // yield* beginSlide('Sequential lines');
+  // yield* sequence(0.3,
+  //   goodCmp().opacity(0,0),
+  //   sequential_text().opacity(1, 0.5),
+  //   s_org_smile().opacity(1, 0.5),
+  //   smile_img().opacity(1, 0.5),
+  //   s_smile_goatee().opacity(1, 0.5),
+  //   goatee_img().opacity(1, 0.5),
+  //   s_goatee_glass().opacity(1, 0.5),
+  //   glasses_img().opacity(1, 0.5)
+  // )
+  // yield* beginSlide('Simultaneous lines');
+  // yield* sequence(0.3,
+  //   all(
+  //     sequential_text().opacity(0.3, 0.5),
+  //     simultaneous_text().opacity(1, 0.5),
+  //   ),
+  //   m_org_tr().opacity(1, 0.5),
+  //   all_attrs_txt().opacity(1, 0.5),
+  //   m_tr_out().opacity(1, 0.5)
+  // )
   yield* beginSlide('end');
 
 });

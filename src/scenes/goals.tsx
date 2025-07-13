@@ -258,5 +258,5 @@ export default makeScene2D(function* (view) {
     secondWidth(600, 0.5),
     qualityRect().width(600, 0.5),
   )
-  yield* beginSlide('Close Slide');
+  yield* beginSlide('end');
 });

@@ -470,43 +470,46 @@ export default makeScene2D(function* (view) {
     firstText().opacity(0, 0.5),
     encoderLayout().opacity(1, 0.5),
   )
-  yield* beginSlide('Latent Classifier 1');
-  yield* sequence(0.5,
-    encoderLayout().opacity(0, 0.5),
-    classifierLayout().opacity(1, 0.5),
-  )
-  yield* beginSlide('Latent Classifier 2');
-  yield* all(
-    latImage().opacity(1, 0.5),
-    attr1(0.63, 0.5),
-    attr2(0.99, 0.5),
-    attr3(0.1, 0.5),
-    attr4(0.2, 0.5),
-  )
-  yield* beginSlide('Latent Classifier 3');
-  yield* all(
-    latImage().opacity(0, 0.5),
-    trImage().opacity(1, 0.5),
-    attr1(0.13, 0.5),
-    attr2(0.32, 0.5),
-    attr3(0.84, 0.5),
-    attr4(0.99, 0.5),
-  )
-  yield* beginSlide('Latent Transformer 1');
-  yield* all(
-    trImage().opacity(0, 0.5),
-    classifierLayout().opacity(0, 0.5)
-  )
-  yield* all(
-    transformerLayout().opacity(1, 0.5)
-  )
-  yield* beginSlide('Latent Transformer 2');
-  yield* all(
-    singImg().alpha(0.2,0.5),
-    tex().opacity(1, 0.51)
-  )
+  // yield* beginSlide('Latent Classifier 1');
+  // yield* sequence(0.5,
+  //   encoderLayout().opacity(0, 0.5),
+  //   classifierLayout().opacity(1, 0.5),
+  // )
+  // yield* beginSlide('Latent Classifier 2');
+  // yield* all(
+  //   latImage().opacity(1, 0.5),
+  //   attr1(0.63, 0.5),
+  //   attr2(0.99, 0.5),
+  //   attr3(0.1, 0.5),
+  //   attr4(0.2, 0.5),
+  // )
+  // yield* beginSlide('Latent Classifier 3');
+  // yield* all(
+  //   latImage().opacity(0, 0.5),
+  //   trImage().opacity(1, 0.5),
+  //   attr1(0.13, 0.5),
+  //   attr2(0.32, 0.5),
+  //   attr3(0.84, 0.5),
+  //   attr4(0.99, 0.5),
+  // )
+  // yield* beginSlide('Latent Transformer 1');
+  // yield* all(
+  //   encoderLayout().opacity(0, 0.5),
+  //   trImage().opacity(0, 0.5),
+  //   classifierLayout().opacity(0, 0.5)
+  // )
+  // yield* all(
+  //   transformerLayout().opacity(1, 0.5)
+  // )
+  // yield* beginSlide('Latent Transformer 2');
+  // yield* all(
+  //   singImg().alpha(0.2,0.5),
+  //   tex().opacity(1, 0.51)
+  // )
   yield* beginSlide('Latent Transformer 3');
   yield* all(
+    encoderLayout().opacity(0, 0.5),
+    transformerLayout().opacity(1, 0.5),
     singImg().alpha(0, 0.5),
     singImg().fill("#F3722C", 0.5),
     singImg().size([100, 100], 0.5),
